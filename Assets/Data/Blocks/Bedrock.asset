@@ -13,3 +13,10 @@ MonoBehaviour:
   m_Name: Bedrock
   m_EditorClassIdentifier: 
   blockName: Bedrock
+  textures:
+  - {fileID: 11400000, guid: abe0a248956eb5b419d13d37c76b2e2d, type: 2}
+  - {fileID: 11400000, guid: abe0a248956eb5b419d13d37c76b2e2d, type: 2}
+  - {fileID: 11400000, guid: abe0a248956eb5b419d13d37c76b2e2d, type: 2}
+  - {fileID: 11400000, guid: abe0a248956eb5b419d13d37c76b2e2d, type: 2}
+  - {fileID: 11400000, guid: abe0a248956eb5b419d13d37c76b2e2d, type: 2}
+  - {fileID: 11400000, guid: abe0a248956eb5b419d13d37c76b2e2d, type: 2}

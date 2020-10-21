@@ -13,3 +13,10 @@ MonoBehaviour:
   m_Name: Dirt
   m_EditorClassIdentifier: 
   blockName: Dirt
+  textures:
+  - {fileID: 11400000, guid: 1fa96c4ba016fe046b33ef4ae5310da8, type: 2}
+  - {fileID: 11400000, guid: 1fa96c4ba016fe046b33ef4ae5310da8, type: 2}
+  - {fileID: 11400000, guid: 1fa96c4ba016fe046b33ef4ae5310da8, type: 2}
+  - {fileID: 11400000, guid: 1fa96c4ba016fe046b33ef4ae5310da8, type: 2}
+  - {fileID: 11400000, guid: 1fa96c4ba016fe046b33ef4ae5310da8, type: 2}
+  - {fileID: 11400000, guid: 1fa96c4ba016fe046b33ef4ae5310da8, type: 2}

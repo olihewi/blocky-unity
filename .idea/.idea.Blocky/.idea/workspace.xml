@@ -8,6 +8,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BlockTile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editor/WorldGenEditor.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -16,6 +17,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Editor/WorldGenEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BlockTile.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Block.cs" />
       </list>
     </option>
   </component>
@@ -60,7 +63,7 @@
       <updated>1603281805158</updated>
       <workItem from="1603281845118" duration="3143000" />
       <workItem from="1603285053958" duration="3000" />
-      <workItem from="1603285071771" duration="7705000" />
+      <workItem from="1603285071771" duration="9084000" />
     </task>
     <servers />
   </component>

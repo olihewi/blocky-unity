@@ -13,3 +13,10 @@ MonoBehaviour:
   m_Name: Stone
   m_EditorClassIdentifier: 
   blockName: Stone
+  textures:
+  - {fileID: 11400000, guid: 3efb1a9a25c2f224fbe16a932fc82c62, type: 2}
+  - {fileID: 11400000, guid: 3efb1a9a25c2f224fbe16a932fc82c62, type: 2}
+  - {fileID: 11400000, guid: 3efb1a9a25c2f224fbe16a932fc82c62, type: 2}
+  - {fileID: 11400000, guid: 3efb1a9a25c2f224fbe16a932fc82c62, type: 2}
+  - {fileID: 11400000, guid: 3efb1a9a25c2f224fbe16a932fc82c62, type: 2}
+  - {fileID: 11400000, guid: 3efb1a9a25c2f224fbe16a932fc82c62, type: 2}

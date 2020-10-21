@@ -20,6 +20,7 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Block.cs" t="Include" />
+          <e p="BlockTile.cs" t="Include" />
           <e p="Chunk.cs" t="Include" />
           <e p="Editor" t="Include">
             <e p="WorldGenEditor.cs" t="Include" />
