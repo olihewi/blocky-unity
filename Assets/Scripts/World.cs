@@ -17,7 +17,7 @@ public class World : MonoBehaviour
     public GameObject chunkPrefab;
     
     private Dictionary<ChunkPos, Chunk> chunks = new Dictionary<ChunkPos,Chunk>();
-
+    
     private void Start()
     {
         StartCoroutine(LoadChunks(false));
@@ -86,7 +86,11 @@ public class World : MonoBehaviour
 
         return thisChunkObject;
     }
-    
+
+    public Block getBlock(int worldX, int worldY, int worldZ)
+    {
+        return chunks[new ChunkPos(worldX / 16, worldY / 16, worldZ / 16)].blocks[worldX % 16, worldY % 16, worldZ % 16];
+    }
 }
 
 public struct ChunkPos

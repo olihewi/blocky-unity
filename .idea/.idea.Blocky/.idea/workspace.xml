@@ -13,9 +13,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/Editor/WorldGenEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Editor/WorldGenEditor.cs" />
       </list>
     </option>
   </component>
@@ -60,7 +60,7 @@
       <updated>1603281805158</updated>
       <workItem from="1603281845118" duration="3143000" />
       <workItem from="1603285053958" duration="3000" />
-      <workItem from="1603285071771" duration="5654000" />
+      <workItem from="1603285071771" duration="7705000" />
     </task>
     <servers />
   </component>
