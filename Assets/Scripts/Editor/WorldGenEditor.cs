@@ -22,6 +22,8 @@ namespace Editor
             DrawUILine(new Color(0.5f,0.5f,0.5f));
             EditorGUILayout.LabelField("World Generation Options", EditorStyles.boldLabel);
             worldScript.fillerBlock = (Block)EditorGUILayout.ObjectField("Filler Block", worldScript.fillerBlock, typeof(Block), false);
+            worldScript.surfaceBlock = (Block)EditorGUILayout.ObjectField("Surface Block", worldScript.surfaceBlock, typeof(Block), false);
+            worldScript.almostSurfaceBlock = (Block)EditorGUILayout.ObjectField("Almost Surface Block", worldScript.almostSurfaceBlock, typeof(Block), false);
             worldScript.seaLevel = EditorGUILayout.IntField("Sea Level", worldScript.seaLevel);
             worldScript.perlinFrequency = EditorGUILayout.FloatField("Perlin Frequency", worldScript.perlinFrequency);
             worldScript.perlinAmplitude = EditorGUILayout.FloatField("Perlin Amplitude", worldScript.perlinAmplitude);

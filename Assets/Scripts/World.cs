@@ -10,6 +10,8 @@ public class World : MonoBehaviour
     public int verticalRenderDistance = 3;
 
     public Block fillerBlock;
+    public Block surfaceBlock;
+    public Block almostSurfaceBlock;
     public int seaLevel = 16;
     public float perlinFrequency = 40f;
     public float perlinAmplitude = 16f;
@@ -76,6 +78,14 @@ public class World : MonoBehaviour
                     {
                         //GameObject.Instantiate(cubePrefab, new Vector3((chunkPosX * 16) + x, y, (chunkPosZ * 16) + z), Quaternion.identity);
                         thisChunkObject.blocks[x, y, z] = fillerBlock;
+                        if (chunkY * 16 + y + 4 >= perlin + seaLevel)
+                        {
+                            thisChunkObject.blocks[x, y, z] = almostSurfaceBlock;
+                        }
+                        if (chunkY * 16 + y + 1 >= perlin + seaLevel)
+                        {
+                            thisChunkObject.blocks[x, y, z] = surfaceBlock;
+                        }
                     }
                     
                 }

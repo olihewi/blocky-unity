@@ -17,6 +17,7 @@ public class Chunk : MonoBehaviour
 
         List<Vector3> verts = new List<Vector3>();
         List<int> tris = new List<int>();
+        List<Vector2> uvs = new List<Vector2>();
 
         for (int x = 0; x < chunkWidth; x++)
         {
@@ -36,6 +37,7 @@ public class Chunk : MonoBehaviour
                         verts.Add(thisPos + new Vector3(1, 1, 1));
                         verts.Add(thisPos + new Vector3(1, 1, 0));
                         faceCounter++;
+                        uvs.AddRange(blocks[x,y,z].textures[0].uvs);
                     }
                     // Bottom
                     if (y == 0 || blocks[x,y - 1,z] == null)
@@ -45,6 +47,7 @@ public class Chunk : MonoBehaviour
                         verts.Add(thisPos + new Vector3(1, 0, 1));
                         verts.Add(thisPos + new Vector3(0, 0, 1));
                         faceCounter++;
+                        uvs.AddRange(blocks[x, y, z].textures[1].uvs);
                     }
                     // Front
                     if (z == 0 || blocks[x, y, z - 1] == null)
@@ -54,6 +57,7 @@ public class Chunk : MonoBehaviour
                         verts.Add(thisPos + new Vector3(1, 1, 0));
                         verts.Add(thisPos + new Vector3(1, 0, 0));
                         faceCounter++;
+                        uvs.AddRange(blocks[x, y, z].textures[2].uvs);
                     }
                     // Back
                     if (z == chunkDepth-1 || blocks[x, y, z + 1] == null)
@@ -63,6 +67,7 @@ public class Chunk : MonoBehaviour
                         verts.Add(thisPos + new Vector3(0, 1, 1));
                         verts.Add(thisPos + new Vector3(0, 0, 1));
                         faceCounter++;
+                        uvs.AddRange(blocks[x, y, z].textures[4].uvs);
                     }
                     // Left
                     if (x == 0 || blocks[x - 1, y, z] == null)
@@ -72,6 +77,7 @@ public class Chunk : MonoBehaviour
                         verts.Add(thisPos + new Vector3(0, 1, 0));
                         verts.Add(thisPos + new Vector3(0, 0, 0));
                         faceCounter++;
+                        uvs.AddRange(blocks[x, y, z].textures[3].uvs);
                     }
                     // Right
                     if (x == chunkWidth-1 || blocks[x + 1, y, z] == null)
@@ -81,6 +87,7 @@ public class Chunk : MonoBehaviour
                         verts.Add(thisPos + new Vector3(1, 1, 1));
                         verts.Add(thisPos + new Vector3(1, 0, 1));
                         faceCounter++;
+                        uvs.AddRange(blocks[x, y, z].textures[5].uvs);
                     }
 
                     // Triangles
@@ -100,6 +107,8 @@ public class Chunk : MonoBehaviour
         mesh.vertices = verts.ToArray();
 
         mesh.triangles = tris.ToArray();
+
+        mesh.uv = uvs.ToArray();
 
         GetComponent<MeshFilter>().mesh = mesh;
     }
