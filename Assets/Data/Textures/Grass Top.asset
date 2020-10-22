@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d54d6931cff73d64cb0572e72ebc0e5d, type: 3}
   m_Name: Grass Top
   m_EditorClassIdentifier: 
-  xPosition: 4
-  yPosition: 0
+  uvs:
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}

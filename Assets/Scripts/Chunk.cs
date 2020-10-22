@@ -109,6 +109,8 @@ public class Chunk : MonoBehaviour
         mesh.triangles = tris.ToArray();
 
         mesh.uv = uvs.ToArray();
+        
+        mesh.RecalculateNormals();
 
         GetComponent<MeshFilter>().mesh = mesh;
     }

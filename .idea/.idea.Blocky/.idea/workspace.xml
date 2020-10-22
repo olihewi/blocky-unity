@@ -1,11 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="25ed5fa4-01c2-4521-a89d-283679d9330f" name="Default Changelist" comment="" />
+    <list default="true" id="25ed5fa4-01c2-4521-a89d-283679d9330f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Blocky/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blocky/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Blocky/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blocky/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Stone.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Stone.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Textures/Dirt.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Textures/Dirt.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Textures/Grass Side.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Textures/Grass Side.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Textures/Grass Top.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Textures/Grass Top.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Textures/Oak Leaves.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Textures/Oak Leaves.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Textures/Oak Log Side.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Textures/Oak Log Side.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Textures/Oak Log Top.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Textures/Oak Log Top.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Textures/Sand.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Textures/Sand.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Textures/Sandstone Bottom.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Textures/Sandstone Bottom.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Textures/Sandstone Side.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Textures/Sandstone Side.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Textures/Sandstone Top.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Textures/Sandstone Top.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Textures/Stone.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Textures/Stone.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/BlockTileEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/BlockTileEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/atlas.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/atlas.png" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BlockTile.cs" root0="FORCE_HIGHLIGHTING" />
@@ -18,8 +46,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/BlockTile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Editor/WorldGenEditor.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Editor/BlockTileEditor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" />
       </list>
     </option>
   </component>
@@ -65,6 +93,7 @@
       <workItem from="1603281845118" duration="3143000" />
       <workItem from="1603285053958" duration="3000" />
       <workItem from="1603285071771" duration="16178000" />
+      <workItem from="1603369665866" duration="6515000" />
     </task>
     <servers />
   </component>
