@@ -10,8 +10,8 @@ namespace Editor
         {
             base.OnInspectorGUI();
             BlockTile blockTileScript = (BlockTile) target;
-            float tileX = (blockTileScript.uvs[0].x - 0.001f) * 64f;
-            float tileY = (blockTileScript.uvs[0].y - 0.001f) * 64f;
+            float tileX = (blockTileScript.uvs[0].x) * 64f;
+            float tileY = (blockTileScript.uvs[0].y) * 64f;
             tileX = EditorGUILayout.FloatField("xPosition", tileX);
             tileY = EditorGUILayout.FloatField("yPosition", tileY);
             blockTileScript.uvs = new Vector2[]
