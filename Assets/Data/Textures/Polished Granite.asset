@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Polished Granite
   m_EditorClassIdentifier: 
   uvs:
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
+  - {x: 0.625, y: 0}
+  - {x: 0.625, y: 0.0625}
+  - {x: 0.6875, y: 0.0625}
+  - {x: 0.6875, y: 0}

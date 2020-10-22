@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Stone Bricks
   m_EditorClassIdentifier: 
   uvs:
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
+  - {x: 0.1875, y: 0}
+  - {x: 0.1875, y: 0.0625}
+  - {x: 0.25, y: 0.0625}
+  - {x: 0.25, y: 0}

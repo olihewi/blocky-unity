@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ice
   m_EditorClassIdentifier: 
   uvs:
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
+  - {x: 0.9375, y: 0.125}
+  - {x: 0.9375, y: 0.1875}
+  - {x: 1, y: 0.1875}
+  - {x: 1, y: 0.125}

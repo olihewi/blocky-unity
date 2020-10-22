@@ -23,6 +23,7 @@ namespace Editor
                     new Vector2((tileX+1)/16f, (tileY+1)/16f),
                     new Vector2((tileX+1)/16f, tileY/16f),
                 };
+                Debug.Log("Set " + blockTileScript.name + " UVs: " + tileX + ", " + tileY);
             }
             
         }
