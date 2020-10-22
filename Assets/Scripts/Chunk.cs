@@ -10,6 +10,7 @@ public class Chunk : MonoBehaviour
     
     //public GameObject cubePrefab;
     public Block[,,] blocks = new Block[chunkWidth,chunkHeight,chunkDepth];
+    public Chunk[] adjacentChunks = new Chunk[6];
 
     public void GenerateMesh()
     {
@@ -30,7 +31,15 @@ public class Chunk : MonoBehaviour
                     int faceCounter = 0;
                     Vector3 thisPos = new Vector3(x, y, z);
                     // Top
-                    if (y == chunkHeight-1 || blocks[x,y + 1,z] == null)
+                    bool hasFace = false;
+                    if (y == chunkHeight - 1)
+                    {
+                        if (adjacentChunks[0] != null && adjacentChunks[0].blocks[x, 0, z] == null)
+                            hasFace = true;
+                    }
+                    else if (blocks[x, y + 1, z] == null)
+                        hasFace = true;
+                    if (hasFace)
                     {
                         verts.Add(thisPos + new Vector3(0, 1, 0));
                         verts.Add(thisPos + new Vector3(0, 1, 1));
@@ -40,7 +49,15 @@ public class Chunk : MonoBehaviour
                         uvs.AddRange(blocks[x,y,z].textures[0].uvs);
                     }
                     // Bottom
-                    if (y == 0 || blocks[x,y - 1,z] == null)
+                    hasFace = false;
+                    if (y == 0)
+                    {
+                        if (adjacentChunks[1] != null && adjacentChunks[1].blocks[x, chunkHeight-1, z] == null)
+                            hasFace = true;
+                    }
+                    else if (blocks[x, y - 1, z] == null)
+                        hasFace = true;
+                    if (hasFace)
                     {
                         verts.Add(thisPos + new Vector3(0, 0, 0));
                         verts.Add(thisPos + new Vector3(1, 0, 0));
@@ -50,7 +67,15 @@ public class Chunk : MonoBehaviour
                         uvs.AddRange(blocks[x, y, z].textures[1].uvs);
                     }
                     // Front
-                    if (z == 0 || blocks[x, y, z - 1] == null)
+                    hasFace = false;
+                    if (z == 0)
+                    {
+                        if (adjacentChunks[2] != null && adjacentChunks[2].blocks[x, chunkDepth-1, z] == null)
+                            hasFace = true;
+                    }
+                    else if (blocks[x, y, z-1] == null)
+                        hasFace = true;
+                    if (hasFace)
                     {
                         verts.Add(thisPos + new Vector3(0, 0, 0));
                         verts.Add(thisPos + new Vector3(0, 1, 0));
@@ -60,7 +85,15 @@ public class Chunk : MonoBehaviour
                         uvs.AddRange(blocks[x, y, z].textures[2].uvs);
                     }
                     // Back
-                    if (z == chunkDepth-1 || blocks[x, y, z + 1] == null)
+                    hasFace = false;
+                    if (z == chunkDepth-1)
+                    {
+                        if (adjacentChunks[4] != null && adjacentChunks[4].blocks[x, 0, z] == null)
+                            hasFace = true;
+                    }
+                    else if (blocks[x, y, z+1] == null)
+                        hasFace = true;
+                    if (hasFace)
                     {
                         verts.Add(thisPos + new Vector3(1, 0, 1));
                         verts.Add(thisPos + new Vector3(1, 1, 1));
@@ -70,7 +103,15 @@ public class Chunk : MonoBehaviour
                         uvs.AddRange(blocks[x, y, z].textures[4].uvs);
                     }
                     // Left
-                    if (x == 0 || blocks[x - 1, y, z] == null)
+                    hasFace = false;
+                    if (x == 0)
+                    {
+                        if (adjacentChunks[3] != null && adjacentChunks[3].blocks[chunkWidth-1, y, z] == null)
+                            hasFace = true;
+                    }
+                    else if (blocks[x-1, y, z] == null)
+                        hasFace = true;
+                    if (hasFace)
                     {
                         verts.Add(thisPos + new Vector3(0, 0, 1));
                         verts.Add(thisPos + new Vector3(0, 1, 1));
@@ -80,7 +121,15 @@ public class Chunk : MonoBehaviour
                         uvs.AddRange(blocks[x, y, z].textures[3].uvs);
                     }
                     // Right
-                    if (x == chunkWidth-1 || blocks[x + 1, y, z] == null)
+                    hasFace = false;
+                    if (x == chunkWidth-1)
+                    {
+                        if (adjacentChunks[5] != null && adjacentChunks[5].blocks[0, y, z] == null)
+                            hasFace = true;
+                    }
+                    else if (blocks[x+1, y, z] == null)
+                        hasFace = true;
+                    if (hasFace)
                     {
                         verts.Add(thisPos + new Vector3(1, 0, 0));
                         verts.Add(thisPos + new Vector3(1, 1, 0));
@@ -114,4 +163,5 @@ public class Chunk : MonoBehaviour
 
         GetComponent<MeshFilter>().mesh = mesh;
     }
+    
 }

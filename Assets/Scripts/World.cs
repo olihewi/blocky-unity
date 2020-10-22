@@ -92,6 +92,44 @@ public class World : MonoBehaviour
             }
         }
 
+        Chunk neighbourChunk;
+        if (chunks.TryGetValue(new ChunkPos(chunkX, chunkY + 1, chunkZ), out neighbourChunk)) // Top
+        {
+            neighbourChunk.adjacentChunks[1] = thisChunkObject;
+            thisChunkObject.adjacentChunks[0] = neighbourChunk;
+            neighbourChunk.GenerateMesh();
+        }
+        if (chunks.TryGetValue(new ChunkPos(chunkX, chunkY - 1, chunkZ), out neighbourChunk)) // Bottom
+        {
+            neighbourChunk.adjacentChunks[0] = thisChunkObject;
+            thisChunkObject.adjacentChunks[1] = neighbourChunk;
+            neighbourChunk.GenerateMesh();
+        }
+        if (chunks.TryGetValue(new ChunkPos(chunkX, chunkY, chunkZ - 1), out neighbourChunk)) // Front
+        {
+            neighbourChunk.adjacentChunks[4] = thisChunkObject;
+            thisChunkObject.adjacentChunks[2] = neighbourChunk;
+            neighbourChunk.GenerateMesh();
+        }
+        if (chunks.TryGetValue(new ChunkPos(chunkX, chunkY, chunkZ + 1), out neighbourChunk)) // Back
+        {
+            neighbourChunk.adjacentChunks[2] = thisChunkObject;
+            thisChunkObject.adjacentChunks[4] = neighbourChunk;
+            neighbourChunk.GenerateMesh();
+        }
+        if (chunks.TryGetValue(new ChunkPos(chunkX - 1, chunkY, chunkZ), out neighbourChunk)) // Left
+        {
+            neighbourChunk.adjacentChunks[5] = thisChunkObject;
+            thisChunkObject.adjacentChunks[3] = neighbourChunk;
+            neighbourChunk.GenerateMesh();
+        }
+        if (chunks.TryGetValue(new ChunkPos(chunkX + 1, chunkY, chunkZ), out neighbourChunk)) // Right
+        {
+            neighbourChunk.adjacentChunks[3] = thisChunkObject;
+            thisChunkObject.adjacentChunks[5] = neighbourChunk;
+            neighbourChunk.GenerateMesh();
+        }
+
         thisChunkObject.GenerateMesh();
 
         return thisChunkObject;
