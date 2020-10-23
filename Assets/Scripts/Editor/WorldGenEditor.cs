@@ -36,6 +36,7 @@ namespace Editor
                 noiseLayer.mFrequency = EditorGUILayout.FloatField("Frequency", noiseLayer.mFrequency);
                 noiseLayer.mAmplitude = EditorGUILayout.FloatField("Amplitude", noiseLayer.mAmplitude);
                 noiseLayer.blendingMode = (FastNoiseLite.BlendingOperator)EditorGUILayout.EnumPopup("Blending Mode", noiseLayer.blendingMode);
+                noiseLayer.threshold = EditorGUILayout.Vector2Field("Threshold", noiseLayer.threshold);
                 if (GUILayout.Button("Remove Layer"))
                 {
                     worldScript.heightMapNoiseLayers.RemoveAt(noiseLayerIndex);

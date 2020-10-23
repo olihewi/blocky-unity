@@ -20,16 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25ed5fa4-01c2-4521-a89d-283679d9330f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Blocky/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blocky/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blocky/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blocky/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Glass.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Glass.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Chunk Rendering.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Chunk Rendering.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BlockTile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BlockTile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/WorldGenEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/WorldGenEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Third Party/FastNoiseLite.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Third Party/FastNoiseLite.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/World.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/TextureAtlas.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/TextureAtlas.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/atlas.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/atlas.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,11 +43,11 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Block.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Editor/BlockTileEditor.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/BlockTile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FreeCamera.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Third Party/FastNoiseLite.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BlockTile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Editor/WorldGenEditor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Third Party/FastNoiseLite.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World.cs" />
       </list>
     </option>
@@ -101,7 +95,7 @@
       <workItem from="1603285053958" duration="3000" />
       <workItem from="1603285071771" duration="16178000" />
       <workItem from="1603369665866" duration="7164000" />
-      <workItem from="1603450443606" duration="11479000" />
+      <workItem from="1603450443606" duration="14269000" />
     </task>
     <servers />
   </component>

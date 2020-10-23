@@ -9,6 +9,7 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using UnityEngine;
 
 // Switch between using floats or doubles for input position
 using FNLfloat = System.Single;
@@ -85,13 +86,16 @@ public class FastNoiseLite
         Add,
         Subtract,
         Multiply,
-        Divide
+        Divide,
+        Square,
+        Set
     };
     
     public int mSeed = 1337;
     public float mFrequency = 0.01f;
     public float mAmplitude = 1f;
     public BlendingOperator blendingMode = BlendingOperator.Add;
+    public Vector2 threshold = new Vector2(0,1);
     public NoiseType mNoiseType = NoiseType.OpenSimplex2;
     public RotationType3D mRotationType3D = RotationType3D.None;
     public TransformType3D mTransformType3D = TransformType3D.DefaultOpenSimplex2;

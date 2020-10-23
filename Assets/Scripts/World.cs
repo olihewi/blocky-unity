@@ -73,21 +73,32 @@ public class World : MonoBehaviour
                 float perlin = 0f;
                 foreach (FastNoiseLite noiseLayer in heightMapNoiseLayers)
                 {
-                    switch (noiseLayer.blendingMode)
+                    float thisPerlinLayer = noiseLayer.GetNoise(chunkX * 16 + x, chunkZ * 16 + z);
+                    if (thisPerlinLayer >= noiseLayer.threshold.x * noiseLayer.mAmplitude && thisPerlinLayer <= noiseLayer.threshold.y * noiseLayer.mAmplitude)
                     {
-                        case FastNoiseLite.BlendingOperator.Add:
-                            perlin += noiseLayer.GetNoise(chunkX * 16 + x, chunkZ * 16 + z);
-                            break;
-                        case FastNoiseLite.BlendingOperator.Subtract:
-                            perlin -= noiseLayer.GetNoise(chunkX * 16 + x, chunkZ * 16 + z);
-                            break;
-                        case FastNoiseLite.BlendingOperator.Multiply:
-                            perlin *= noiseLayer.GetNoise(chunkX * 16 + x, chunkZ * 16 + z);
-                            break;
-                        case FastNoiseLite.BlendingOperator.Divide:
-                            perlin /= noiseLayer.GetNoise(chunkX * 16 + x, chunkZ * 16 + z);
-                            break;
+                        switch (noiseLayer.blendingMode)
+                        {
+                            case FastNoiseLite.BlendingOperator.Add:
+                                perlin += thisPerlinLayer;
+                                break;
+                            case FastNoiseLite.BlendingOperator.Subtract:
+                                perlin -= thisPerlinLayer;
+                                break;
+                            case FastNoiseLite.BlendingOperator.Multiply:
+                                perlin *= thisPerlinLayer;
+                                break;
+                            case FastNoiseLite.BlendingOperator.Divide:
+                                perlin /= thisPerlinLayer;
+                                break;
+                            case FastNoiseLite.BlendingOperator.Square:
+                                perlin = Mathf.Pow(perlin,thisPerlinLayer * 2);
+                                break;
+                            case FastNoiseLite.BlendingOperator.Set:
+                                perlin = thisPerlinLayer;
+                                break;
+                        }
                     }
+                    
                     
                 }
                 //float perlin = Mathf.PerlinNoise((seed + (chunkX * 16) + x) / perlinFrequency, (seed + (chunkZ * 16) + z) / perlinFrequency) * perlinAmplitude;
