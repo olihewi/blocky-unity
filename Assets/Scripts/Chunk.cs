@@ -70,7 +70,7 @@ public class Chunk : MonoBehaviour
                     hasFace = false;
                     if (z == 0)
                     {
-                        if (adjacentChunks[2] != null && adjacentChunks[2].blocks[x, chunkDepth-1, z] == null)
+                        if (adjacentChunks[2] != null && adjacentChunks[2].blocks[x, y, chunkDepth-1] == null)
                             hasFace = true;
                     }
                     else if (blocks[x, y, z-1] == null)
@@ -88,7 +88,7 @@ public class Chunk : MonoBehaviour
                     hasFace = false;
                     if (z == chunkDepth-1)
                     {
-                        if (adjacentChunks[4] != null && adjacentChunks[4].blocks[x, 0, z] == null)
+                        if (adjacentChunks[4] != null && adjacentChunks[4].blocks[x, y, 0] == null)
                             hasFace = true;
                     }
                     else if (blocks[x, y, z+1] == null)
