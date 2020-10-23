@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(MeshFilter))]
+[RequireComponent(typeof(MeshRenderer))]
 public class Chunk : MonoBehaviour
 {
     public static int chunkWidth = 16;
@@ -46,7 +48,7 @@ public class Chunk : MonoBehaviour
                         verts.Add(thisPos + new Vector3(1, 1, 1));
                         verts.Add(thisPos + new Vector3(1, 1, 0));
                         faceCounter++;
-                        uvs.AddRange(blocks[x,y,z].textures[0].uvs);
+                        uvs.AddRange(blocks[x,y,z].textures[0].GetUVs());
                     }
                     // Bottom
                     hasFace = false;
@@ -64,7 +66,7 @@ public class Chunk : MonoBehaviour
                         verts.Add(thisPos + new Vector3(1, 0, 1));
                         verts.Add(thisPos + new Vector3(0, 0, 1));
                         faceCounter++;
-                        uvs.AddRange(blocks[x, y, z].textures[1].uvs);
+                        uvs.AddRange(blocks[x, y, z].textures[1].GetUVs());
                     }
                     // Front
                     hasFace = false;
@@ -82,7 +84,7 @@ public class Chunk : MonoBehaviour
                         verts.Add(thisPos + new Vector3(1, 1, 0));
                         verts.Add(thisPos + new Vector3(1, 0, 0));
                         faceCounter++;
-                        uvs.AddRange(blocks[x, y, z].textures[2].uvs);
+                        uvs.AddRange(blocks[x, y, z].textures[2].GetUVs());
                     }
                     // Back
                     hasFace = false;
@@ -100,7 +102,7 @@ public class Chunk : MonoBehaviour
                         verts.Add(thisPos + new Vector3(0, 1, 1));
                         verts.Add(thisPos + new Vector3(0, 0, 1));
                         faceCounter++;
-                        uvs.AddRange(blocks[x, y, z].textures[4].uvs);
+                        uvs.AddRange(blocks[x, y, z].textures[4].GetUVs());
                     }
                     // Left
                     hasFace = false;
@@ -118,7 +120,7 @@ public class Chunk : MonoBehaviour
                         verts.Add(thisPos + new Vector3(0, 1, 0));
                         verts.Add(thisPos + new Vector3(0, 0, 0));
                         faceCounter++;
-                        uvs.AddRange(blocks[x, y, z].textures[3].uvs);
+                        uvs.AddRange(blocks[x, y, z].textures[3].GetUVs());
                     }
                     // Right
                     hasFace = false;
@@ -136,7 +138,7 @@ public class Chunk : MonoBehaviour
                         verts.Add(thisPos + new Vector3(1, 1, 1));
                         verts.Add(thisPos + new Vector3(1, 0, 1));
                         faceCounter++;
-                        uvs.AddRange(blocks[x, y, z].textures[5].uvs);
+                        uvs.AddRange(blocks[x, y, z].textures[5].GetUVs());
                     }
 
                     // Triangles

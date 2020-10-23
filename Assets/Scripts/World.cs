@@ -69,7 +69,7 @@ public class World : MonoBehaviour
         
         for (int x = 0; x < Chunk.chunkWidth; x++)
         {
-            for (int z = 0; z < Chunk.chunkHeight; z++)
+            for (int z = 0; z < Chunk.chunkDepth; z++)
             {
                 float perlin = Mathf.PerlinNoise((seed + (chunkX * 16) + x) / perlinFrequency, (seed + (chunkZ * 16) + z) / perlinFrequency) * perlinAmplitude;
                 for (int y = 0; y < Chunk.chunkHeight; y++)
