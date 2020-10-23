@@ -20,8 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25ed5fa4-01c2-4521-a89d-283679d9330f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Blocky/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blocky/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/WorldGenEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/WorldGenEditor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Third Party/FastNoiseLite.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Third Party/FastNoiseLite.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/World.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World.cs" afterDir="false" />
     </list>
@@ -95,7 +93,7 @@
       <workItem from="1603285053958" duration="3000" />
       <workItem from="1603285071771" duration="16178000" />
       <workItem from="1603369665866" duration="7164000" />
-      <workItem from="1603450443606" duration="14269000" />
+      <workItem from="1603450443606" duration="15097000" />
     </task>
     <servers />
   </component>

@@ -143,13 +143,13 @@ public class FastNoiseLite
         switch (mFractalType)
         {
             default:
-                return GenNoiseSingle(mSeed, x, y) * mAmplitude;
+                return GenNoiseSingle(mSeed, x, y);
             case FractalType.FBm:
-                return GenFractalFBm(x, y) * mAmplitude;
+                return GenFractalFBm(x, y);
             case FractalType.Ridged:
-                return GenFractalRidged(x, y) * mAmplitude;
+                return GenFractalRidged(x, y);
             case FractalType.PingPong:
-                return GenFractalPingPong(x, y) * mAmplitude;
+                return GenFractalPingPong(x, y);
         }
     }
 

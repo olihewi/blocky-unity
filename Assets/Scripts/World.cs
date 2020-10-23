@@ -74,27 +74,27 @@ public class World : MonoBehaviour
                 foreach (FastNoiseLite noiseLayer in heightMapNoiseLayers)
                 {
                     float thisPerlinLayer = noiseLayer.GetNoise(chunkX * 16 + x, chunkZ * 16 + z);
-                    if (thisPerlinLayer >= noiseLayer.threshold.x * noiseLayer.mAmplitude && thisPerlinLayer <= noiseLayer.threshold.y * noiseLayer.mAmplitude)
+                    if (thisPerlinLayer >= noiseLayer.threshold.x && thisPerlinLayer <= noiseLayer.threshold.y)
                     {
                         switch (noiseLayer.blendingMode)
                         {
                             case FastNoiseLite.BlendingOperator.Add:
-                                perlin += thisPerlinLayer;
+                                perlin += thisPerlinLayer * noiseLayer.mAmplitude;
                                 break;
                             case FastNoiseLite.BlendingOperator.Subtract:
-                                perlin -= thisPerlinLayer;
+                                perlin -= thisPerlinLayer * noiseLayer.mAmplitude;
                                 break;
                             case FastNoiseLite.BlendingOperator.Multiply:
-                                perlin *= thisPerlinLayer;
+                                perlin *= thisPerlinLayer * noiseLayer.mAmplitude;
                                 break;
                             case FastNoiseLite.BlendingOperator.Divide:
-                                perlin /= thisPerlinLayer;
+                                perlin /= thisPerlinLayer * noiseLayer.mAmplitude;
                                 break;
                             case FastNoiseLite.BlendingOperator.Square:
                                 perlin = Mathf.Pow(perlin,thisPerlinLayer * 2);
                                 break;
                             case FastNoiseLite.BlendingOperator.Set:
-                                perlin = thisPerlinLayer;
+                                perlin = thisPerlinLayer * noiseLayer.mAmplitude;
                                 break;
                         }
                     }

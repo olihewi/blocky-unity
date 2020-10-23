@@ -37,6 +37,7 @@ namespace Editor
                 noiseLayer.mAmplitude = EditorGUILayout.FloatField("Amplitude", noiseLayer.mAmplitude);
                 noiseLayer.blendingMode = (FastNoiseLite.BlendingOperator)EditorGUILayout.EnumPopup("Blending Mode", noiseLayer.blendingMode);
                 noiseLayer.threshold = EditorGUILayout.Vector2Field("Threshold", noiseLayer.threshold);
+                noiseLayer.mFractalType = (FastNoiseLite.FractalType) EditorGUILayout.EnumPopup("Fractal Type", noiseLayer.mFractalType);
                 if (GUILayout.Button("Remove Layer"))
                 {
                     worldScript.heightMapNoiseLayers.RemoveAt(noiseLayerIndex);
