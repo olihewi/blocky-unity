@@ -25,8 +25,28 @@ namespace Editor
             worldScript.surfaceBlock = (Block)EditorGUILayout.ObjectField("Surface Block", worldScript.surfaceBlock, typeof(Block), false);
             worldScript.almostSurfaceBlock = (Block)EditorGUILayout.ObjectField("Almost Surface Block", worldScript.almostSurfaceBlock, typeof(Block), false);
             worldScript.seaLevel = EditorGUILayout.IntField("Sea Level", worldScript.seaLevel);
-            worldScript.perlinFrequency = EditorGUILayout.FloatField("Perlin Frequency", worldScript.perlinFrequency);
-            worldScript.perlinAmplitude = EditorGUILayout.FloatField("Perlin Amplitude", worldScript.perlinAmplitude);
+            EditorGUILayout.LabelField("Height Map Noise Layers", EditorStyles.boldLabel);
+            int noiseLayerIndex = 0;
+            foreach (FastNoiseLite noiseLayer in worldScript.heightMapNoiseLayers)
+            {
+                DrawUILine(new Color(0.5f,0.5f,0.5f));
+                EditorGUILayout.LabelField("Noise Layer", EditorStyles.boldLabel);
+                noiseLayer.mSeed = (int)(worldScript.seed * noiseLayerIndex * 0.75f);
+                noiseLayer.mNoiseType = (FastNoiseLite.NoiseType)EditorGUILayout.EnumPopup("Noise Type",noiseLayer.mNoiseType);
+                noiseLayer.mFrequency = EditorGUILayout.FloatField("Frequency", noiseLayer.mFrequency);
+                noiseLayer.mAmplitude = EditorGUILayout.FloatField("Amplitude", noiseLayer.mAmplitude);
+                noiseLayer.blendingMode = (FastNoiseLite.BlendingOperator)EditorGUILayout.EnumPopup("Blending Mode", noiseLayer.blendingMode);
+                if (GUILayout.Button("Remove Layer"))
+                {
+                    worldScript.heightMapNoiseLayers.RemoveAt(noiseLayerIndex);
+                }
+                DrawUILine(new Color(0.5f,0.5f,0.5f));
+                noiseLayerIndex++;
+            }
+            if (GUILayout.Button("New Layer"))
+            {
+                worldScript.heightMapNoiseLayers.Add(new FastNoiseLite());
+            }
             DrawUILine(new Color(0.5f,0.5f,0.5f));
             if (GUILayout.Button("Generate") && Application.isPlaying)
             {

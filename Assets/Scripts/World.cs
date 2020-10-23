@@ -13,10 +13,9 @@ public class World : MonoBehaviour
     public Block surfaceBlock;
     public Block almostSurfaceBlock;
     public int seaLevel = 16;
-    public float perlinFrequency = 40f;
-    public float perlinAmplitude = 16f;
 
     public GameObject chunkPrefab;
+    public List<FastNoiseLite> heightMapNoiseLayers = new List<FastNoiseLite>();
     
     private Dictionary<ChunkPos, Chunk> chunks = new Dictionary<ChunkPos,Chunk>();
     
@@ -71,7 +70,27 @@ public class World : MonoBehaviour
         {
             for (int z = 0; z < Chunk.chunkDepth; z++)
             {
-                float perlin = Mathf.PerlinNoise((seed + (chunkX * 16) + x) / perlinFrequency, (seed + (chunkZ * 16) + z) / perlinFrequency) * perlinAmplitude;
+                float perlin = 0f;
+                foreach (FastNoiseLite noiseLayer in heightMapNoiseLayers)
+                {
+                    switch (noiseLayer.blendingMode)
+                    {
+                        case FastNoiseLite.BlendingOperator.Add:
+                            perlin += noiseLayer.GetNoise(chunkX * 16 + x, chunkZ * 16 + z);
+                            break;
+                        case FastNoiseLite.BlendingOperator.Subtract:
+                            perlin -= noiseLayer.GetNoise(chunkX * 16 + x, chunkZ * 16 + z);
+                            break;
+                        case FastNoiseLite.BlendingOperator.Multiply:
+                            perlin *= noiseLayer.GetNoise(chunkX * 16 + x, chunkZ * 16 + z);
+                            break;
+                        case FastNoiseLite.BlendingOperator.Divide:
+                            perlin /= noiseLayer.GetNoise(chunkX * 16 + x, chunkZ * 16 + z);
+                            break;
+                    }
+                    
+                }
+                //float perlin = Mathf.PerlinNoise((seed + (chunkX * 16) + x) / perlinFrequency, (seed + (chunkZ * 16) + z) / perlinFrequency) * perlinAmplitude;
                 for (int y = 0; y < Chunk.chunkHeight; y++)
                 {
                     if (chunkY * 16 + y < perlin + seaLevel)

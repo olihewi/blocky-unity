@@ -224,6 +224,7 @@ GameObject:
   - component: {fileID: 342452568}
   - component: {fileID: 342452567}
   - component: {fileID: 342452566}
+  - component: {fileID: 342452569}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -296,6 +297,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 24.5, y: 118.43, z: 0}
+--- !u!114 &342452569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342452565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24e5afde61cd7474dbed7c1b5e405596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flySpeed: 20
+  fastFlySpeed: 40
+  cameraSensitivity: 1
 --- !u!1 &962196731
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,12 +341,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93790be29d96c3848becb1c25ac0390d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seed: 0
+  seed: 6155580
   horizontalRenderDistance: 1
   verticalRenderDistance: 1
   fillerBlock: {fileID: 11400000, guid: 7c7e5d103e528344f90f9e10a7a13561, type: 2}
-  surfaceBlock: {fileID: 0}
-  almostSurfaceBlock: {fileID: 0}
+  surfaceBlock: {fileID: 11400000, guid: 6972a8d849909b04ca8260d37f1902ef, type: 2}
+  almostSurfaceBlock: {fileID: 11400000, guid: 4e5b881374b4e0347a599536a8e90224, type: 2}
   seaLevel: 0
   perlinFrequency: 40
   perlinAmplitude: 16

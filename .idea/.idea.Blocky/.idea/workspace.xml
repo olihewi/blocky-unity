@@ -1,12 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="25ed5fa4-01c2-4521-a89d-283679d9330f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Blocky/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blocky/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blocky/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blocky/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Glass.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Glass.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Chunk Rendering.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Chunk Rendering.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/BlockTile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BlockTile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/WorldGenEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/WorldGenEditor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/World.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Textures/TextureAtlas.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/TextureAtlas.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/atlas.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/atlas.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,16 +42,19 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BlockTile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Editor/WorldGenEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Third Party/FastNoiseLite.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Block.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Editor/WorldGenEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Editor/BlockTileEditor.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BlockTile.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FreeCamera.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Third Party/FastNoiseLite.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Editor/WorldGenEditor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World.cs" />
       </list>
     </option>
   </component>
@@ -41,7 +67,7 @@
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
@@ -75,6 +101,7 @@
       <workItem from="1603285053958" duration="3000" />
       <workItem from="1603285071771" duration="16178000" />
       <workItem from="1603369665866" duration="7164000" />
+      <workItem from="1603450443606" duration="11479000" />
     </task>
     <servers />
   </component>
@@ -83,21 +110,32 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1143" y="403" key="SettingsEditor" timestamp="1603285304111">
+    <state x="1143" y="403" key="SettingsEditor" timestamp="1603469262429">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="1143" y="403" key="SettingsEditor/0.0.2560.1440@0.0.2560.1440" timestamp="1603285304111" />
+    <state x="1143" y="403" key="SettingsEditor/0.0.2560.1440@0.0.2560.1440" timestamp="1603469262429" />
     <state x="92" y="92" width="2376" height="1256" key="VCS.FileHistoryDialog" timestamp="1603398355129">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="92" y="92" width="2376" height="1256" key="VCS.FileHistoryDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1603398355129" />
-    <state x="943" y="325" width="672" height="678" key="search.everywhere.popup" timestamp="1603290083429">
+    <state x="943" y="325" width="672" height="678" key="search.everywhere.popup" timestamp="1603472615920">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="943" y="325" width="672" height="678" key="search.everywhere.popup/0.0.2560.1440@0.0.2560.1440" timestamp="1603290083429" />
+    <state x="943" y="325" width="672" height="678" key="search.everywhere.popup/0.0.2560.1440@0.0.2560.1440" timestamp="1603472615920" />
   </component>
 </project>

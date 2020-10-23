@@ -33,6 +33,10 @@
             <e p="BlockTileEditor.cs" t="Include" />
             <e p="WorldGenEditor.cs" t="Include" />
           </e>
+          <e p="FreeCamera.cs" t="Include" />
+          <e p="Third Party" t="Include">
+            <e p="FastNoiseLite.cs" t="Include" />
+          </e>
           <e p="World.cs" t="Include" />
         </e>
       </e>
