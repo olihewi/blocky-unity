@@ -40,6 +40,7 @@
             <e p="WorldGenEditor.cs" t="Include" />
           </e>
           <e p="FreeCamera.cs" t="Include" />
+          <e p="Inventory.cs" t="Include" />
           <e p="Third Party" t="Include">
             <e p="FastNoiseLite.cs" t="Include" />
           </e>

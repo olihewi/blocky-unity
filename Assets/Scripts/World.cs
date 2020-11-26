@@ -80,7 +80,7 @@ public class World : MonoBehaviour
       }
       foreach (ChunkPos cpos in chunksToDelete)
       {
-        chunks[cpos].gameObject.SetActive(false);
+        Destroy(chunks[cpos].gameObject);
         chunks.Remove(cpos);
       }
     }
@@ -200,7 +200,7 @@ public class World : MonoBehaviour
       neighbourChunk.GenerateMesh();
     }
 
-    thisChunkObject.GenerateMesh();
+    //thisChunkObject.GenerateMesh();
 
     return thisChunkObject;
   }

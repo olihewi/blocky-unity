@@ -5,7 +5,7 @@ using UnityEngine;
 public class Builder : MonoBehaviour
 {
   public World world;
-  public Block buildBlock;
+  public Inventory inventory;
 
   public float buildDistance = 5;
 
@@ -46,7 +46,7 @@ public class Builder : MonoBehaviour
     }
     else
     {
-      thisChunk.blocks[blockIndexX, blockIndexY, blockIndexZ] = buildBlock;
+      thisChunk.blocks[blockIndexX, blockIndexY, blockIndexZ] = inventory.currentBlock;
       thisChunk.GenerateMesh();
     }
   }
