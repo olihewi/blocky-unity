@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 342452567}
   - component: {fileID: 342452566}
   - component: {fileID: 342452569}
+  - component: {fileID: 342452570}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -312,6 +313,24 @@ MonoBehaviour:
   flySpeed: 20
   fastFlySpeed: 40
   cameraSensitivity: 1
+--- !u!114 &342452570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342452565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 690371b2aaaddcb4d98eb9c9cf05a459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  world: {fileID: 962196732}
+  buildBlock: {fileID: 11400000, guid: 7c7e5d103e528344f90f9e10a7a13561, type: 2}
+  buildDistance: 5
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &962196731
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,16 +361,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seed: 6155580
-  horizontalRenderDistance: 1
-  verticalRenderDistance: 1
+  horizontalRenderDistance: 5
+  verticalRenderDistance: 2
   fillerBlock: {fileID: 11400000, guid: 7c7e5d103e528344f90f9e10a7a13561, type: 2}
   surfaceBlock: {fileID: 11400000, guid: 6972a8d849909b04ca8260d37f1902ef, type: 2}
   almostSurfaceBlock: {fileID: 11400000, guid: 4e5b881374b4e0347a599536a8e90224, type: 2}
   seaLevel: 0
-  perlinFrequency: 40
-  perlinAmplitude: 16
   chunkPrefab: {fileID: 4985826216255150507, guid: f5a62086f0737884baaea68b3198b201,
     type: 3}
+  heightMapNoiseLayers:
+  - mSeed: 0
+    mFrequency: 0.02
+    mAmplitude: 4
+    blendingMode: 0
+    threshold: {x: 0, y: 1}
+    mNoiseType: 0
+    mRotationType3D: 0
+    mTransformType3D: 3
+    mFractalType: 0
+    mOctaves: 3
+    mLacunarity: 2
+    mGain: 0.5
+    mWeightedStrength: 0
+    mPingPongStength: 2
+    mFractalBounding: 0.5714286
+    mCellularDistanceFunction: 1
+    mCellularReturnType: 1
+    mCellularJitterModifier: 1
+    mWarpTransformType3D: 3
+    mDomainWarpAmp: 1
 --- !u!4 &962196733
 Transform:
   m_ObjectHideFlags: 0

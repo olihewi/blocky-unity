@@ -5,16 +5,16 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Texture", menuName = "Blocky/Texture")]
 public class BlockTile : ScriptableObject
 {
-    public Vector2[] uvs = new Vector2[4];
+  public Vector2[] uvs = new Vector2[4];
 
-    public Vector2[] GetUVs()
+  public Vector2[] GetUVs()
+  {
+    return new Vector2[4]
     {
-        return new Vector2[4]
-        {
-            uvs[0] + new Vector2(0.001f,0.001f),
-            uvs[1] + new Vector2(0.001f,-0.001f),
-            uvs[2] + new Vector2(-0.001f,-0.001f),
-            uvs[3] + new Vector2(-0.001f,0.001f)
-        };
-    }
+      uvs[0] + new Vector2(0.001f, 0.001f),
+      uvs[1] + new Vector2(0.001f, -0.001f),
+      uvs[2] + new Vector2(-0.001f, -0.001f),
+      uvs[3] + new Vector2(-0.001f, 0.001f)
+    };
+  }
 }
