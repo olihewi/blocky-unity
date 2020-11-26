@@ -15,6 +15,11 @@
             </e>
           </e>
         </e>
+        <e p="Materials" t="Include">
+          <e p="Shaders" t="Include">
+            <e p="ddInvertMapped.shader" t="Include" />
+          </e>
+        </e>
         <e p="Plugins" t="Include">
           <e p="GitHub" t="Include">
             <e p="Editor" t="Include">

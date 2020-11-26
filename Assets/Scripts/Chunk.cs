@@ -177,5 +177,6 @@ public class Chunk : MonoBehaviour
 
     GetComponent<MeshFilter>().mesh = mesh;
     GetComponent<MeshCollider>().sharedMesh = mesh;
+    
   }
 }

@@ -62,7 +62,7 @@ namespace Editor
       DrawUILine(new Color(0.5f, 0.5f, 0.5f));
       if (GUILayout.Button("Generate") && Application.isPlaying)
       {
-        worldScript.ReloadAllChunks(true);
+        worldScript.ReloadAllChunks();
       }
     }
 

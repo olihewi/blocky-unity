@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class World : MonoBehaviour
 {
+  public Transform player;
   public int seed = 623456;
 
   public int horizontalRenderDistance = 3;
@@ -19,45 +20,80 @@ public class World : MonoBehaviour
   public List<FastNoiseLite> heightMapNoiseLayers;
 
   public Dictionary<ChunkPos, Chunk> chunks = new Dictionary<ChunkPos, Chunk>();
+  
+  private List<ChunkPos> chunksToGenerate = new List<ChunkPos>();
 
   private void Start()
   {
-    StartCoroutine(LoadChunks(false));
+    var position = player.position;
+    currentChunk = new ChunkPos(Mathf.FloorToInt(position.x)/16-1,Mathf.FloorToInt(position.y)/16-1,Mathf.FloorToInt(position.z)/16-1);
+    foreach (KeyValuePair<ChunkPos, Chunk> chunk in chunks)
+    {
+      Destroy(chunk.Value.gameObject);
+    }
+    chunks.Clear();
   }
+  
 
-  private IEnumerator LoadChunks(bool slow)
+  public void ReloadAllChunks()
   {
     foreach (KeyValuePair<ChunkPos, Chunk> chunk in chunks)
     {
       Destroy(chunk.Value.gameObject);
     }
+  }
 
-    chunks.Clear();
-
-    for (int x = 0; x < 2 * horizontalRenderDistance - 1; x++)
+  private ChunkPos currentChunk = new ChunkPos(0,0,0);
+  private void Update()
+  {
+    var position = player.position;
+    ChunkPos playerChunkPos = new ChunkPos(Mathf.FloorToInt(position.x)/16,Mathf.FloorToInt(position.y)/16,Mathf.FloorToInt(position.z)/16);
+    if (playerChunkPos.x != currentChunk.x || playerChunkPos.y != currentChunk.y || playerChunkPos.z != currentChunk.z)
     {
-      for (int y = 0; y < 2 * verticalRenderDistance - 1; y++)
+      currentChunk = playerChunkPos;
+      // Generate New Chunks
+      for (int x = currentChunk.x - horizontalRenderDistance; x <= currentChunk.x + horizontalRenderDistance; x++)
       {
-        for (int z = 0; z < 2 * horizontalRenderDistance - 1; z++)
+        for (int y = currentChunk.y - verticalRenderDistance; y <= currentChunk.y + verticalRenderDistance; y++)
         {
-          chunks.Add(new ChunkPos(x - horizontalRenderDistance + 1, y - verticalRenderDistance + 1, z - horizontalRenderDistance + 1),
-            GenerateChunk(x - horizontalRenderDistance + 1, y - verticalRenderDistance + 1, z - horizontalRenderDistance + 1));
-          if (slow)
+          for (int z = currentChunk.z - horizontalRenderDistance; z <= currentChunk.z + horizontalRenderDistance; z++)
           {
-            yield return null;
+            if ((new Vector3(x,y,z) - new Vector3(currentChunk.x,currentChunk.y,currentChunk.z)).magnitude > horizontalRenderDistance)
+              continue;
+            ChunkPos cp = new ChunkPos(x,y,z);
+            if (!chunks.ContainsKey(cp) && !chunksToGenerate.Contains(cp))
+            {
+              chunksToGenerate.Add(cp);
+            }
           }
         }
       }
+      // Destroy Old Chunks
+      List<ChunkPos> chunksToDelete = new List<ChunkPos>();
+      foreach (KeyValuePair<ChunkPos, Chunk> chunk in chunks)
+      {
+        ChunkPos cp = chunk.Key;
+        if (Mathf.Abs(cp.x - playerChunkPos.x) > horizontalRenderDistance || Mathf.Abs(cp.y - playerChunkPos.y) > verticalRenderDistance || Mathf.Abs(cp.z - playerChunkPos.z) > horizontalRenderDistance)
+        {
+          chunksToDelete.Add(cp);
+        }
+      }
+      foreach (ChunkPos cpos in chunksToDelete)
+      {
+        chunks[cpos].gameObject.SetActive(false);
+        chunks.Remove(cpos);
+      }
     }
-  }
 
-  public void ReloadAllChunks(bool slow)
-  {
-    StartCoroutine(LoadChunks(slow));
-  }
-
-  private void Update()
-  {
+    // Generate Chunks to Generate
+    for (int i = 0; i < 1; i++)
+    {
+      if (chunksToGenerate.Count == 0) break;
+      ChunkPos chunkToGen = chunksToGenerate[0];
+      chunks.Add(chunkToGen,GenerateChunk(chunkToGen.x,chunkToGen.y,chunkToGen.z));
+      chunksToGenerate.Remove(chunkToGen);
+    }
+    
   }
 
   private Chunk GenerateChunk(int chunkX, int chunkY, int chunkZ)
@@ -101,7 +137,6 @@ public class World : MonoBehaviour
           }
         }
 
-        //float perlin = Mathf.PerlinNoise((seed + (chunkX * 16) + x) / perlinFrequency, (seed + (chunkZ * 16) + z) / perlinFrequency) * perlinAmplitude;
         for (int y = 0; y < Chunk.chunkHeight; y++)
         {
           if (chunkY * 16 + y < perlin + seaLevel)
@@ -169,11 +204,12 @@ public class World : MonoBehaviour
 
     return thisChunkObject;
   }
-
+  
   public Block getBlock(int worldX, int worldY, int worldZ)
   {
     return chunks[new ChunkPos(worldX / 16, worldY / 16, worldZ / 16)].blocks[worldX % 16, worldY % 16, worldZ % 16];
   }
+  
 }
 
 public struct ChunkPos

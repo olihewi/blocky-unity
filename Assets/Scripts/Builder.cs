@@ -15,46 +15,39 @@ public class Builder : MonoBehaviour
   {
     bool leftClick = Input.GetMouseButtonDown(0);
     bool rightClick = Input.GetMouseButtonDown(1);
-    if (leftClick || rightClick)
+    if (!leftClick && !rightClick) return;
+    if (!Physics.Raycast(transform.position, transform.forward, out RaycastHit hitInfo, buildDistance, groundLayer)) return;
+    Vector3 targetPoint;
+    if (rightClick)
     {
-      RaycastHit hitInfo;
-      if (Physics.Raycast(transform.position, transform.forward, out hitInfo, buildDistance, groundLayer))
-      {
-        Vector3 targetPoint;
-        if (rightClick)
-        {
-          targetPoint = hitInfo.point + transform.forward * 0.1f; // move into the block
-        }
-        else
-        {
-          targetPoint = hitInfo.point - transform.forward * 0.1f; // move towards the camera
-        }
+      targetPoint = hitInfo.point - hitInfo.normal * 0.1f; // move into the block
+    }
+    else
+    {
+      targetPoint = hitInfo.point + hitInfo.normal * 0.1f; // move towards the block
+    }
 
-        int chunkPosX = Mathf.FloorToInt(targetPoint.x / 16f);
-        int chunkPosY = Mathf.FloorToInt(targetPoint.y / 16f);
-        int chunkPosZ = Mathf.FloorToInt(targetPoint.z / 16f);
-        
-        Debug.Log(chunkPosX + "," + chunkPosY + "," + chunkPosZ);
-        
-        ChunkPos chunkPos = new ChunkPos(chunkPosX,chunkPosY,chunkPosZ);
+    int chunkPosX = Mathf.FloorToInt(targetPoint.x / 16f);
+    int chunkPosY = Mathf.FloorToInt(targetPoint.y / 16f);
+    int chunkPosZ = Mathf.FloorToInt(targetPoint.z / 16f);
 
-        Chunk thisChunk = world.chunks[chunkPos];
+    ChunkPos chunkPos = new ChunkPos(chunkPosX,chunkPosY,chunkPosZ);
 
-        int blockIndexX = Mathf.FloorToInt(targetPoint.x) - chunkPosX*16;
-        int blockIndexY = Mathf.FloorToInt(targetPoint.y) - chunkPosY*16;
-        int blockIndexZ = Mathf.FloorToInt(targetPoint.z) - chunkPosZ*16;
+    Chunk thisChunk = world.chunks[chunkPos];
 
-        if (rightClick)
-        {
-          thisChunk.blocks[blockIndexX, blockIndexY, blockIndexZ] = null;
-          thisChunk.GenerateMesh();
-        }
-        else
-        {
-          thisChunk.blocks[blockIndexX, blockIndexY, blockIndexZ] = buildBlock;
-          thisChunk.GenerateMesh();
-        }
-      }
+    int blockIndexX = Mathf.FloorToInt(targetPoint.x) - chunkPosX*16;
+    int blockIndexY = Mathf.FloorToInt(targetPoint.y) - chunkPosY*16;
+    int blockIndexZ = Mathf.FloorToInt(targetPoint.z) - chunkPosZ*16;
+    
+    if (rightClick)
+    {
+      thisChunk.blocks[blockIndexX, blockIndexY, blockIndexZ] = null;
+      thisChunk.GenerateMesh();
+    }
+    else
+    {
+      thisChunk.blocks[blockIndexX, blockIndexY, blockIndexZ] = buildBlock;
+      thisChunk.GenerateMesh();
     }
   }
 }
