@@ -34,6 +34,7 @@ public class FreeCamera : MonoBehaviour
     Vector3 moveInput = new Vector3(forward.x,0,forward.z) * Input.GetAxisRaw("Vertical") + new Vector3(right.x,0,right.z) * Input.GetAxisRaw("Horizontal") + Vector3.up * Input.GetAxisRaw("Elevation");
     transform.position += moveInput * (Time.deltaTime * (Input.GetKey("left shift") ? fastFlySpeed : flySpeed));
     currentRotation.x += Input.GetAxis("Mouse X") * cameraSensitivity;
+    currentRotation.x += Input.GetAxis("Look Horizontal") * cameraSensitivity * Time.deltaTime * 30;
     currentRotation.y -= Input.GetAxis("Mouse Y") * cameraSensitivity;
     currentRotation.x = Mathf.Repeat(currentRotation.x, 360);
     transform.rotation = Quaternion.Euler(currentRotation.y, currentRotation.x, 0);

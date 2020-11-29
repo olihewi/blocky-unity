@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Diorite
   m_EditorClassIdentifier: 
   uvs:
-  - {x: 2, y: 0}
-  - {x: 2, y: 0.0625}
-  - {x: 2.0625, y: 0.0625}
-  - {x: 2.0625, y: 0}
+  - {x: 0.8125, y: 0}
+  - {x: 0.8125, y: 0.0625}
+  - {x: 0.875, y: 0.0625}
+  - {x: 0.875, y: 0}

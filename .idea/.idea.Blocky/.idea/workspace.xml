@@ -20,10 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25ed5fa4-01c2-4521-a89d-283679d9330f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Blocky/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blocky/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Blocky/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blocky/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blocky/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blocky/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Chunk Rendering.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Chunk Rendering.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Textures/Bedrock.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Textures/Bedrock.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FreeCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FreeCamera.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/atlas.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/atlas.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,12 +52,13 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Editor/BlockTileEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BlockTile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Third Party/FastNoiseLite.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/FreeCamera.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Editor/WorldGenEditor.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Inventory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Builder.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FreeCamera.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ChunkGenerationJob.cs" />
       </list>
     </option>
   </component>
@@ -101,7 +106,8 @@
       <workItem from="1603285071771" duration="16178000" />
       <workItem from="1603369665866" duration="7164000" />
       <workItem from="1603450443606" duration="15097000" />
-      <workItem from="1606390629750" duration="17152000" />
+      <workItem from="1606390629750" duration="18020000" />
+      <workItem from="1606653621761" duration="8563000" />
     </task>
     <servers />
   </component>
@@ -126,6 +132,10 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="872" y="452" key="Rider.ProjectTemplateDialog.Size" timestamp="1606665830223">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="872" y="452" key="Rider.ProjectTemplateDialog.Size/0.0.2560.1440@0.0.2560.1440" timestamp="1606665830223" />
     <state x="1143" y="403" key="SettingsEditor" timestamp="1606393249100">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>

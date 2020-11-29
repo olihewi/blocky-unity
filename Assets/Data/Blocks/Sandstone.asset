@@ -15,7 +15,7 @@ MonoBehaviour:
   textures:
   - {fileID: 11400000, guid: 17fed13ea602e4a48ab32daed42451da, type: 2}
   - {fileID: 11400000, guid: d458ca1676c44844fb136ce3a99e23c6, type: 2}
-  - {fileID: 11400000, guid: d458ca1676c44844fb136ce3a99e23c6, type: 2}
-  - {fileID: 11400000, guid: d458ca1676c44844fb136ce3a99e23c6, type: 2}
-  - {fileID: 11400000, guid: d458ca1676c44844fb136ce3a99e23c6, type: 2}
-  - {fileID: 11400000, guid: d458ca1676c44844fb136ce3a99e23c6, type: 2}
+  - {fileID: 11400000, guid: 0a4524b982acb2045b45745e73336ab6, type: 2}
+  - {fileID: 11400000, guid: 0a4524b982acb2045b45745e73336ab6, type: 2}
+  - {fileID: 11400000, guid: 0a4524b982acb2045b45745e73336ab6, type: 2}
+  - {fileID: 11400000, guid: 0a4524b982acb2045b45745e73336ab6, type: 2}
