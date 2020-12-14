@@ -7,6 +7,7 @@ public class Builder : MonoBehaviour
   public World world;
   public Inventory inventory;
 
+  public Block airBlock;
   public float buildDistance = 5;
 
   public LayerMask groundLayer;
@@ -27,21 +28,21 @@ public class Builder : MonoBehaviour
       targetPoint = hitInfo.point + hitInfo.normal * 0.1f; // move towards the block
     }
 
-    int chunkPosX = Mathf.FloorToInt(targetPoint.x / 16f);
-    int chunkPosY = Mathf.FloorToInt(targetPoint.y / 16f);
-    int chunkPosZ = Mathf.FloorToInt(targetPoint.z / 16f);
+    int chunkPosX = Mathf.FloorToInt(targetPoint.x / Chunk.chunkWidth);
+    int chunkPosY = Mathf.FloorToInt(targetPoint.y / Chunk.chunkHeight);
+    int chunkPosZ = Mathf.FloorToInt(targetPoint.z / Chunk.chunkDepth);
 
     ChunkPos chunkPos = new ChunkPos(chunkPosX,chunkPosY,chunkPosZ);
 
     Chunk thisChunk = world.chunks[chunkPos];
 
-    int blockIndexX = Mathf.FloorToInt(targetPoint.x) - chunkPosX*16;
-    int blockIndexY = Mathf.FloorToInt(targetPoint.y) - chunkPosY*16;
-    int blockIndexZ = Mathf.FloorToInt(targetPoint.z) - chunkPosZ*16;
+    int blockIndexX = Mathf.FloorToInt(targetPoint.x) - chunkPosX*Chunk.chunkWidth;
+    int blockIndexY = Mathf.FloorToInt(targetPoint.y) - chunkPosY*Chunk.chunkHeight;
+    int blockIndexZ = Mathf.FloorToInt(targetPoint.z) - chunkPosZ*Chunk.chunkDepth;
     
     if (rightClick)
     {
-      thisChunk.blocks[blockIndexX, blockIndexY, blockIndexZ] = null;
+      thisChunk.blocks[blockIndexX, blockIndexY, blockIndexZ] = airBlock;
       thisChunk.GenerateMesh();
     }
     else

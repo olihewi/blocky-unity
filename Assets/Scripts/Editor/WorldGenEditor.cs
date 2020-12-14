@@ -27,8 +27,6 @@ namespace Editor
       worldScript.fillerBlock = (Block) EditorGUILayout.ObjectField("Filler Block", worldScript.fillerBlock, typeof(Block), false);
       worldScript.surfaceBlock = (Block) EditorGUILayout.ObjectField("Surface Block", worldScript.surfaceBlock, typeof(Block), false);
       worldScript.almostSurfaceBlock = (Block) EditorGUILayout.ObjectField("Almost Surface Block", worldScript.almostSurfaceBlock, typeof(Block), false);
-      worldScript.treeLog = (Block) EditorGUILayout.ObjectField("Tree Log Block", worldScript.treeLog, typeof(Block), false);
-      worldScript.treeLeaves = (Block) EditorGUILayout.ObjectField("Tree Leaves Block", worldScript.treeLeaves, typeof(Block), false);
       worldScript.seaLevel = EditorGUILayout.IntField("Sea Level", worldScript.seaLevel);
       EditorGUILayout.LabelField("Height Map Noise Layers", EditorStyles.boldLabel);
       int noiseLayerIndex = 0;
@@ -56,18 +54,33 @@ namespace Editor
         DrawUILine(new Color(0.5f, 0.5f, 0.5f));
         noiseLayerIndex++;
       }
-
       if (GUILayout.Button("New Layer"))
       {
         worldScript.heightMapNoiseLayers.Add(new FastNoiseLite());
       }
-
+      DrawUILine(new Color(0.5f, 0.5f, 0.5f));
+      EditorGUILayout.LabelField("Trees", EditorStyles.boldLabel);
+      for (int i = 0; i < worldScript.treeTypes.Count; i++)
+      {
+        worldScript.treeTypes[i] = (TreeType) EditorGUILayout.ObjectField("Tree", worldScript.treeTypes[i], typeof(TreeType), false);
+      }
+      if (GUILayout.Button("New Tree"))
+      {
+        worldScript.treeTypes.Add(CreateInstance<TreeType>());
+      }
+      if (GUILayout.Button("Remove Tree"))
+      {
+        worldScript.treeTypes.RemoveAt(worldScript.treeTypes.Count-1);
+      }
       DrawUILine(new Color(0.5f, 0.5f, 0.5f));
       if (GUILayout.Button("Generate") && Application.isPlaying)
       {
         worldScript.ReloadAllChunks();
       }
+
     }
+    
+    
 
     private static void DrawUILine(Color color, int thickness = 1, int padding = 10)
     {

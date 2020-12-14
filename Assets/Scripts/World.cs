@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class World : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class World : MonoBehaviour
 
   public GameObject chunkPrefab;
   public List<FastNoiseLite> heightMapNoiseLayers;
+  public List<TreeType> treeTypes;
 
   public Dictionary<ChunkPos, Chunk> chunks = new Dictionary<ChunkPos, Chunk>();
   
@@ -29,7 +31,7 @@ public class World : MonoBehaviour
   private void Start()
   {
     var position = player.position;
-    currentChunk = new ChunkPos(Mathf.FloorToInt(position.x)/16-1,Mathf.FloorToInt(position.y)/16-1,Mathf.FloorToInt(position.z)/16-1);
+    currentChunk = new ChunkPos(Mathf.FloorToInt(position.x)/Chunk.chunkWidth-1,Mathf.FloorToInt(position.y)/Chunk.chunkHeight-1,Mathf.FloorToInt(position.z)/Chunk.chunkDepth-1);
     foreach (KeyValuePair<ChunkPos, Chunk> chunk in chunks)
     {
       Destroy(chunk.Value.gameObject);
@@ -50,7 +52,7 @@ public class World : MonoBehaviour
   private void Update()
   {
     var position = player.position;
-    ChunkPos playerChunkPos = new ChunkPos(Mathf.FloorToInt(position.x)/16,Mathf.FloorToInt(position.y)/16,Mathf.FloorToInt(position.z)/16);
+    ChunkPos playerChunkPos = new ChunkPos(Mathf.FloorToInt(position.x)/Chunk.chunkWidth,Mathf.FloorToInt(position.y)/Chunk.chunkHeight,Mathf.FloorToInt(position.z)/Chunk.chunkDepth);
     if (playerChunkPos.x != currentChunk.x || playerChunkPos.y != currentChunk.y || playerChunkPos.z != currentChunk.z)
     {
       currentChunk = playerChunkPos;
@@ -64,7 +66,8 @@ public class World : MonoBehaviour
             if ((new Vector3(x,y,z) - new Vector3(currentChunk.x,currentChunk.y,currentChunk.z)).magnitude > horizontalRenderDistance)
               continue;
             ChunkPos cp = new ChunkPos(x,y,z);
-            if (!chunks.ContainsKey(cp) && !chunksToGenerate.Contains(cp))
+            bool containsKey = chunks.ContainsKey(cp);
+            if ((!containsKey || !chunks[cp].isGenerated) && !chunksToGenerate.Contains(cp))
             {
               chunksToGenerate.Add(cp);
             }
@@ -93,7 +96,11 @@ public class World : MonoBehaviour
     {
       if (chunksToGenerate.Count == 0) break;
       ChunkPos chunkToGen = chunksToGenerate[0];
-      chunks.Add(chunkToGen,GenerateChunk(chunkToGen.x,chunkToGen.y,chunkToGen.z));
+      Chunk thisChunk = GenerateChunk(chunkToGen.x, chunkToGen.y, chunkToGen.z);
+      if (!chunks.ContainsKey(chunkToGen))
+      {
+        chunks.Add(chunkToGen,thisChunk);
+      }
       chunksToGenerate.Remove(chunkToGen);
     }
     
@@ -101,12 +108,22 @@ public class World : MonoBehaviour
 
   private Chunk GenerateChunk(int chunkX, int chunkY, int chunkZ)
   {
-    GameObject thisChunk = GameObject.Instantiate(chunkPrefab, new Vector3(chunkX * 16, chunkY * 16, chunkZ * 16), Quaternion.identity);
-    thisChunk.transform.parent = transform;
-    thisChunk.name = "Chunk [" + chunkX + ", " + chunkY + ", " + chunkZ + "]";
-    Chunk thisChunkObject = thisChunk.GetComponent<Chunk>();
-    thisChunkObject.FillWithAir(airBlock);
+    Chunk thisChunkObject;
+    if (chunks.ContainsKey(new ChunkPos(chunkX, chunkY, chunkZ)))
+    {
+      thisChunkObject = chunks[new ChunkPos(chunkX,chunkY,chunkZ)];
+    }
+    else
+    {
+      GameObject thisChunk = GameObject.Instantiate(chunkPrefab, new Vector3(chunkX * Chunk.chunkWidth, chunkY * Chunk.chunkHeight, chunkZ * Chunk.chunkDepth), Quaternion.identity);
+      thisChunk.transform.parent = transform;
+      thisChunk.name = "Chunk [" + chunkX + ", " + chunkY + ", " + chunkZ + "]";
+      thisChunkObject = thisChunk.GetComponent<Chunk>();
+      thisChunkObject.FillWithAir(airBlock);
+    }
 
+    thisChunkObject.thisChunkPos = new ChunkPos(chunkX, chunkY, chunkZ);
+    
     for (int x = 0; x < Chunk.chunkWidth; x++)
     {
       for (int z = 0; z < Chunk.chunkDepth; z++)
@@ -114,7 +131,7 @@ public class World : MonoBehaviour
         float perlin = 0f;
         foreach (FastNoiseLite noiseLayer in heightMapNoiseLayers)
         {
-          float thisPerlinLayer = noiseLayer.GetNoise(chunkX * 16 + x, chunkZ * 16 + z);
+          float thisPerlinLayer = noiseLayer.GetNoise(chunkX * Chunk.chunkWidth + x, chunkZ * Chunk.chunkDepth + z);
           if (thisPerlinLayer >= noiseLayer.threshold.x && thisPerlinLayer <= noiseLayer.threshold.y)
           {
             switch (noiseLayer.blendingMode)
@@ -143,19 +160,20 @@ public class World : MonoBehaviour
 
         for (int y = 0; y < Chunk.chunkHeight; y++)
         {
-          if (chunkY * 16 + y < perlin + seaLevel)
+          if (chunkY * Chunk.chunkHeight + y < perlin + seaLevel)
           {
             //GameObject.Instantiate(cubePrefab, new Vector3((chunkPosX * 16) + x, y, (chunkPosZ * 16) + z), Quaternion.identity);
             thisChunkObject.blocks[x, y, z] = fillerBlock;
-            if (chunkY * 16 + y + 4 >= perlin + seaLevel)
+            if (chunkY * Chunk.chunkHeight + y + 4 >= perlin + seaLevel)
             {
               thisChunkObject.blocks[x, y, z] = almostSurfaceBlock;
             }
 
-            if (chunkY * 16 + y + 1 >= perlin + seaLevel)
+            if (chunkY * Chunk.chunkHeight + y + 1 >= perlin + seaLevel)
             {
               thisChunkObject.blocks[x, y, z] = surfaceBlock;
-              thisChunkObject.GenerateTree(x,y,z,treeLog,treeLeaves);
+              GenerateTreeInChunk(chunkX*Chunk.chunkWidth+x,chunkY*Chunk.chunkHeight+y,chunkZ*Chunk.chunkDepth+z);
+              //thisChunkObject.GenerateTree(x,y,z,treeLog,treeLeaves);
             }
           }
         }
@@ -205,14 +223,61 @@ public class World : MonoBehaviour
       neighbourChunk.GenerateMesh();
     }
 
-    //thisChunkObject.GenerateMesh();
+    thisChunkObject.GenerateMesh();
+    thisChunkObject.isGenerated = true;
 
     return thisChunkObject;
   }
-  
-  public Block getBlock(int worldX, int worldY, int worldZ)
+
+  private void SetBlock(int worldX, int worldY, int worldZ, Block block)
   {
-    return chunks[new ChunkPos(worldX / 16, worldY / 16, worldZ / 16)].blocks[worldX % 16, worldY % 16, worldZ % 16];
+    Chunk thisChunk;
+    ChunkPos thisChunkPos = new ChunkPos(Mathf.FloorToInt(worldX / (float)Chunk.chunkWidth), Mathf.FloorToInt(worldY / (float)Chunk.chunkHeight), Mathf.FloorToInt(worldZ / (float)Chunk.chunkDepth));
+    if (chunks.ContainsKey(thisChunkPos))
+    {
+      thisChunk = chunks[thisChunkPos];
+    }
+    else
+    {
+      GameObject thisChunkObject = GameObject.Instantiate(chunkPrefab, new Vector3(thisChunkPos.x * Chunk.chunkWidth, thisChunkPos.y * Chunk.chunkHeight, thisChunkPos.z * Chunk.chunkDepth), Quaternion.identity);
+      thisChunkObject.transform.parent = transform;
+      thisChunkObject.name = "Chunk [" + thisChunkPos.x + ", " + thisChunkPos.y + ", " + thisChunkPos.z + "]";
+      thisChunk = thisChunkObject.GetComponent<Chunk>();
+      thisChunk.FillWithAir(airBlock);
+      chunks.Add(thisChunkPos,thisChunk);
+    }
+    
+    thisChunk.blocks[MathMod(worldX,Chunk.chunkWidth), MathMod(worldY,Chunk.chunkHeight), MathMod(worldZ,Chunk.chunkDepth)] = block;
+  }
+
+  private void GenerateTreeInChunk(int worldX, int worldY, int worldZ)
+  {
+    Random.InitState(worldX*10000+worldZ);
+    if (!(Random.value < 0.01)) return;
+    int randomTree = Random.Range(0, treeTypes.Count);
+    TreeType treeType = treeTypes[randomTree];
+    Debug.Log(randomTree);
+    int treeHeight = Mathf.FloorToInt(Random.value * (treeType.heightMinAndMax.y-treeType.heightMinAndMax.x) + treeType.heightMinAndMax.x);
+    int leavesHeight = treeHeight - 1;
+    for (int _y = 0; _y < treeHeight; _y++)
+    {
+      for (int _x = -2; _x <= 2; _x++)
+      {
+        for (int _z = -2; _z <= 2; _z++)
+        {
+          if (_y < treeHeight - 1)
+          {
+            SetBlock(worldX+_x,worldY+_y+leavesHeight,worldZ+_z,treeType.leaves);
+          }
+        }
+      }
+      SetBlock(worldX,worldY+_y+1,worldZ,treeType.bark);
+    }
+  }
+
+  private static int MathMod(int a, int b)
+  {
+    return ((a % b) + b) % b;
   }
 
 }

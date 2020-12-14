@@ -20,4 +20,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2afc35c98fe10ff4699d6a442c883001, type: 2}
   - {fileID: 11400000, guid: 2afc35c98fe10ff4699d6a442c883001, type: 2}
   - {fileID: 11400000, guid: 2afc35c98fe10ff4699d6a442c883001, type: 2}
-  isTransparent: 0
+  isTransparent: 1

@@ -11,67 +11,13 @@ public class Chunk : MonoBehaviour
   public static int chunkDepth = 16;
 
   public GameObject transparentChild;
+  public bool isGenerated = false;
 
   //public GameObject cubePrefab;
   public Block[,,] blocks = new Block[chunkWidth, chunkHeight, chunkDepth];
+  public ChunkPos thisChunkPos;
   public Chunk[] adjacentChunks = new Chunk[6];
   
-
-  public void GenerateTree(int x, int y, int z, Block treeLog, Block treeLeaves)
-  {
-    Random.InitState(x*10000+z);
-    if (Random.value < 0.01)
-    {
-      int treeHeight = Mathf.FloorToInt(Random.value * 4 + 4);
-      int leavesHeight = Mathf.FloorToInt(treeHeight*0.5f)+2;
-      for (int _y = 0; _y < treeHeight; _y++)
-      {
-        for (int _x = -2; _x <= 2; _x++)
-        {
-          for (int _z = -2; _z <= 2; _z++)
-          {
-            if (_y < treeHeight - 1)
-            {
-              SetLocalBlock(x+_x,y+_y+leavesHeight,z+_z,treeLeaves);
-            }
-          }
-        }
-        SetLocalBlock(x,y+_y+1,z,treeLog);
-      }
-    }
-  }
-
-  private void SetLocalBlock(int x, int y, int z, Block blockType)
-  {
-    Chunk thisChunk = this;
-    while (y > chunkHeight-1 || y < 0)
-    {
-      if (adjacentChunks[y > 0 ? 0 : 1] == null)
-        return;
-      thisChunk = adjacentChunks[y > 0 ? 0 : 1];
-      y += y > 0 ? -1 : -16;
-    }
-    while (x > chunkWidth-1 || x < 0)
-    {
-      if (adjacentChunks[x > 0 ? 2 : 4] == null)
-        return;
-      thisChunk = adjacentChunks[x > 0 ? 2 : 4];
-      x += x > 0 ? -1 : -16;
-    }
-    while (z > chunkDepth-1 || z < 0)
-    {
-      if (adjacentChunks[z > 0 ? 3 : 5] == null)
-        return;
-      thisChunk = adjacentChunks[z > 0 ? 3 : 5];
-      z += z > 0 ? -1 : -16;
-    }
-    /*if (x >= 0 && x < chunkWidth && y >= 0 && y < chunkHeight && z >= 0 && z < chunkDepth)
-    {
-      thisChunk.blocks[x, y, z] = blockType;
-    }*/
-
-    thisChunk.blocks[x, y, z] = blockType;
-  }
   public void GenerateMesh()
   {
     Mesh mesh = new Mesh();

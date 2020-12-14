@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3b6b71f7652ba743a11bfb527f119d3, type: 3}
+  m_Name: Dark Oak
+  m_EditorClassIdentifier: 
+  heightMinAndMax: {x: 5, y: 7}
+  bark: {fileID: 11400000, guid: 128be5bec08180d419ea784233766ef3, type: 2}
+  leaves: {fileID: 11400000, guid: 8d658ef19f0d55c45af6abea066471ec, type: 2}
