@@ -22,6 +22,7 @@ public class World : MonoBehaviour
 
   public GameObject chunkPrefab;
   public List<FastNoiseLite> heightMapNoiseLayers;
+  public List<FastNoiseLite> caveNoiseLayers;
   public List<TreeType> treeTypes;
 
   public Dictionary<ChunkPos, Chunk> chunks = new Dictionary<ChunkPos, Chunk>();
@@ -162,8 +163,21 @@ public class World : MonoBehaviour
         {
           if (chunkY * Chunk.chunkHeight + y < perlin + seaLevel)
           {
-            //GameObject.Instantiate(cubePrefab, new Vector3((chunkPosX * 16) + x, y, (chunkPosZ * 16) + z), Quaternion.identity);
             thisChunkObject.blocks[x, y, z] = fillerBlock;
+            if (chunkY * Chunk.chunkHeight + y < seaLevel)
+            {
+              foreach (FastNoiseLite noiseLayer in caveNoiseLayers)
+              {
+                float cavePerlin = noiseLayer.GetNoise(chunkX * Chunk.chunkWidth + x, (chunkY * Chunk.chunkHeight + y) * 2, chunkZ * Chunk.chunkDepth + z);
+                if (cavePerlin >= noiseLayer.threshold.x && cavePerlin <= noiseLayer.threshold.y)
+                {
+                  thisChunkObject.blocks[x, y, z] = airBlock;
+                }
+              }
+            }
+
+            if (thisChunkObject.blocks[x, y, z] == airBlock) continue;
+            
             if (chunkY * Chunk.chunkHeight + y + 4 >= perlin + seaLevel)
             {
               thisChunkObject.blocks[x, y, z] = almostSurfaceBlock;
@@ -175,6 +189,8 @@ public class World : MonoBehaviour
               GenerateTreeInChunk(chunkX*Chunk.chunkWidth+x,chunkY*Chunk.chunkHeight+y,chunkZ*Chunk.chunkDepth+z);
               //thisChunkObject.GenerateTree(x,y,z,treeLog,treeLeaves);
             }
+            
+            
           }
         }
       }

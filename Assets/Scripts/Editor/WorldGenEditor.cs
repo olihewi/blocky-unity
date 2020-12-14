@@ -59,6 +59,38 @@ namespace Editor
         worldScript.heightMapNoiseLayers.Add(new FastNoiseLite());
       }
       DrawUILine(new Color(0.5f, 0.5f, 0.5f));
+      EditorGUILayout.LabelField("Cave Noise Layers", EditorStyles.boldLabel);
+      noiseLayerIndex = 0;
+      if (worldScript.caveNoiseLayers == null)
+      {
+        worldScript.caveNoiseLayers = new List<FastNoiseLite>();
+      }
+
+      foreach (FastNoiseLite noiseLayer in worldScript.caveNoiseLayers)
+      {
+        DrawUILine(new Color(0.5f, 0.5f, 0.5f));
+        EditorGUILayout.LabelField("Noise Layer", EditorStyles.boldLabel);
+        noiseLayer.mSeed = (int) (worldScript.seed * noiseLayerIndex * 0.75f);
+        noiseLayer.mNoiseType = (FastNoiseLite.NoiseType) EditorGUILayout.EnumPopup("Noise Type", noiseLayer.mNoiseType);
+        noiseLayer.mFrequency = EditorGUILayout.FloatField("Frequency", noiseLayer.mFrequency);
+        noiseLayer.threshold = EditorGUILayout.Vector2Field("Threshold", noiseLayer.threshold);
+        noiseLayer.mFractalType = (FastNoiseLite.FractalType) EditorGUILayout.EnumPopup("Fractal Type", noiseLayer.mFractalType);
+        noiseLayer.mCellularDistanceFunction = (FastNoiseLite.CellularDistanceFunction) EditorGUILayout.EnumPopup("Cellular Distance Function", noiseLayer.mCellularDistanceFunction);
+        noiseLayer.mCellularReturnType = (FastNoiseLite.CellularReturnType) EditorGUILayout.EnumPopup("Cellular Return Type", noiseLayer.mCellularReturnType);
+        if (GUILayout.Button("Remove Layer"))
+        {
+          worldScript.caveNoiseLayers.RemoveAt(noiseLayerIndex);
+        }
+
+        DrawUILine(new Color(0.5f, 0.5f, 0.5f));
+        noiseLayerIndex++;
+      }
+      if (GUILayout.Button("New Layer"))
+      {
+        worldScript.caveNoiseLayers.Add(new FastNoiseLite());
+      }
+      
+      DrawUILine(new Color(0.5f, 0.5f, 0.5f));
       EditorGUILayout.LabelField("Trees", EditorStyles.boldLabel);
       for (int i = 0; i < worldScript.treeTypes.Count; i++)
       {
