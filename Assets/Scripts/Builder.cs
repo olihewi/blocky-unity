@@ -8,6 +8,7 @@ public class Builder : MonoBehaviour
   public Inventory inventory;
 
   public Block airBlock;
+  public GameObject breakBlockParticles;
   public float buildDistance = 5;
 
   public LayerMask groundLayer;
@@ -42,6 +43,13 @@ public class Builder : MonoBehaviour
     
     if (rightClick)
     {
+      GameObject brokenParticles = Instantiate(breakBlockParticles, new Vector3(Mathf.FloorToInt(targetPoint.x)+0.5f, Mathf.FloorToInt(targetPoint.y)+0.5f, Mathf.FloorToInt(targetPoint.z)+0.5f), Quaternion.identity);
+      ParticleSystem particleSystem = brokenParticles.GetComponent<ParticleSystem>();
+      ParticleSystem.TextureSheetAnimationModule tex = particleSystem.textureSheetAnimation;
+      Vector2 uvStart = thisChunk.blocks[blockIndexX, blockIndexY, blockIndexZ].textures[3].uvs[0];
+      tex.startFrame = uvStart.x/16 + (1-uvStart.y) + 1/256f - 16/256f;
+      Debug.Log(Mathf.FloorToInt(uvStart.x*16) + Mathf.FloorToInt((1-uvStart.y)*256));
+      particleSystem.Play();
       thisChunk.blocks[blockIndexX, blockIndexY, blockIndexZ] = airBlock;
       thisChunk.GenerateMesh();
     }

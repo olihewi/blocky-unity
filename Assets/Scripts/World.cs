@@ -256,7 +256,6 @@ public class World : MonoBehaviour
     if (!(Random.value < 0.01)) return;
     int randomTree = Random.Range(0, treeTypes.Count);
     TreeType treeType = treeTypes[randomTree];
-    Debug.Log(randomTree);
     int treeHeight = Mathf.FloorToInt(Random.value * (treeType.heightMinAndMax.y-treeType.heightMinAndMax.x) + treeType.heightMinAndMax.x);
     int leavesHeight = treeHeight - 1;
     for (int _y = 0; _y < treeHeight; _y++)

@@ -35,6 +35,7 @@
           <e p="BlockTile.cs" t="Include" />
           <e p="Builder.cs" t="Include" />
           <e p="Chunk.cs" t="Include" />
+          <e p="DestroyParticlesOnFinish.cs" t="Include" />
           <e p="Editor" t="Include">
             <e p="BlockTileEditor.cs" t="Include" />
             <e p="WorldGenEditor.cs" t="Include" />
