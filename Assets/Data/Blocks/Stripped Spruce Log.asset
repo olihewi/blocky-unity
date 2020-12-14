@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00e592335132ff49bf24ba996b200d2, type: 3}
   m_Name: Stripped Spruce Log
   m_EditorClassIdentifier: 
+  isAir: 0
   textures:
   - {fileID: 11400000, guid: e3f7f46235241754d9ee50b43ff7e22a, type: 2}
   - {fileID: 11400000, guid: e3f7f46235241754d9ee50b43ff7e22a, type: 2}
@@ -19,3 +20,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ca4874825e74a0c42a8c35af1cf72ad6, type: 2}
   - {fileID: 11400000, guid: ca4874825e74a0c42a8c35af1cf72ad6, type: 2}
   - {fileID: 11400000, guid: ca4874825e74a0c42a8c35af1cf72ad6, type: 2}
+  isTransparent: 0

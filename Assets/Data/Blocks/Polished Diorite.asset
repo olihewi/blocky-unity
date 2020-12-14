@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00e592335132ff49bf24ba996b200d2, type: 3}
   m_Name: Polished Diorite
   m_EditorClassIdentifier: 
+  isAir: 0
   textures:
   - {fileID: 11400000, guid: 3101285ebc83763469fb32c8830c746a, type: 2}
   - {fileID: 11400000, guid: 3101285ebc83763469fb32c8830c746a, type: 2}
@@ -19,3 +20,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3101285ebc83763469fb32c8830c746a, type: 2}
   - {fileID: 11400000, guid: 3101285ebc83763469fb32c8830c746a, type: 2}
   - {fileID: 11400000, guid: 3101285ebc83763469fb32c8830c746a, type: 2}
+  isTransparent: 0

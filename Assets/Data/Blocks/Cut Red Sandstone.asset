@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00e592335132ff49bf24ba996b200d2, type: 3}
   m_Name: Cut Red Sandstone
   m_EditorClassIdentifier: 
+  isAir: 0
   textures:
   - {fileID: 11400000, guid: efeb34417a31c4a4eb2a279698545524, type: 2}
   - {fileID: 11400000, guid: efeb34417a31c4a4eb2a279698545524, type: 2}
@@ -19,3 +20,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9f018df7546609849b2175f7e6135c95, type: 2}
   - {fileID: 11400000, guid: 9f018df7546609849b2175f7e6135c95, type: 2}
   - {fileID: 11400000, guid: 9f018df7546609849b2175f7e6135c95, type: 2}
+  isTransparent: 0

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00e592335132ff49bf24ba996b200d2, type: 3}
   m_Name: Bookshelf
   m_EditorClassIdentifier: 
+  isAir: 0
   textures:
   - {fileID: 11400000, guid: 08678c87fe03e664a9cd53dae56f0eca, type: 2}
   - {fileID: 11400000, guid: 08678c87fe03e664a9cd53dae56f0eca, type: 2}
@@ -19,3 +20,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a41d117cd1ce37f41af3114d84fb117d, type: 2}
   - {fileID: 11400000, guid: a41d117cd1ce37f41af3114d84fb117d, type: 2}
   - {fileID: 11400000, guid: a41d117cd1ce37f41af3114d84fb117d, type: 2}
+  isTransparent: 0

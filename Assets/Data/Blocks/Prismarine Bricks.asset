@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00e592335132ff49bf24ba996b200d2, type: 3}
   m_Name: Prismarine Bricks
   m_EditorClassIdentifier: 
+  isAir: 0
   textures:
   - {fileID: 11400000, guid: 5b7cd62c84aa85b499873095d95b1143, type: 2}
   - {fileID: 11400000, guid: 5b7cd62c84aa85b499873095d95b1143, type: 2}
@@ -19,3 +20,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5b7cd62c84aa85b499873095d95b1143, type: 2}
   - {fileID: 11400000, guid: 5b7cd62c84aa85b499873095d95b1143, type: 2}
   - {fileID: 11400000, guid: 5b7cd62c84aa85b499873095d95b1143, type: 2}
+  isTransparent: 0

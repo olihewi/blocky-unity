@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00e592335132ff49bf24ba996b200d2, type: 3}
   m_Name: Snowed Stone
   m_EditorClassIdentifier: 
+  isAir: 0
   textures:
   - {fileID: 11400000, guid: 1c3ac78063d613041802a0c81ee98c75, type: 2}
   - {fileID: 11400000, guid: 3efb1a9a25c2f224fbe16a932fc82c62, type: 2}
@@ -19,3 +20,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e12788fbe9e9dda498042f9c345450b0, type: 2}
   - {fileID: 11400000, guid: e12788fbe9e9dda498042f9c345450b0, type: 2}
   - {fileID: 11400000, guid: e12788fbe9e9dda498042f9c345450b0, type: 2}
+  isTransparent: 0

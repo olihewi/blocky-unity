@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00e592335132ff49bf24ba996b200d2, type: 3}
   m_Name: Birch Log
   m_EditorClassIdentifier: 
+  isAir: 0
   textures:
   - {fileID: 11400000, guid: 7680f40b00b750b408a5b528ae0a352f, type: 2}
   - {fileID: 11400000, guid: 7680f40b00b750b408a5b528ae0a352f, type: 2}
@@ -19,3 +20,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 825eca73290c65046b730dc927d93d09, type: 2}
   - {fileID: 11400000, guid: 825eca73290c65046b730dc927d93d09, type: 2}
   - {fileID: 11400000, guid: 825eca73290c65046b730dc927d93d09, type: 2}
+  isTransparent: 0

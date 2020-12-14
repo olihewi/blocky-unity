@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00e592335132ff49bf24ba996b200d2, type: 3}
   m_Name: Stripped Acacia Log
   m_EditorClassIdentifier: 
+  isAir: 0
   textures:
   - {fileID: 11400000, guid: 2f226c0a5e9b5c9418382187967b8eb3, type: 2}
   - {fileID: 11400000, guid: 2f226c0a5e9b5c9418382187967b8eb3, type: 2}
@@ -19,3 +20,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b2fd3157038f52143bc68cd829b54fa4, type: 2}
   - {fileID: 11400000, guid: b2fd3157038f52143bc68cd829b54fa4, type: 2}
   - {fileID: 11400000, guid: b2fd3157038f52143bc68cd829b54fa4, type: 2}
+  isTransparent: 0

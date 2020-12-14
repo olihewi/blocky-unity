@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00e592335132ff49bf24ba996b200d2, type: 3}
   m_Name: Path
   m_EditorClassIdentifier: 
+  isAir: 0
   textures:
   - {fileID: 11400000, guid: cf87d2835f9ff7e47b1b095332e56399, type: 2}
   - {fileID: 11400000, guid: 1fa96c4ba016fe046b33ef4ae5310da8, type: 2}
@@ -19,3 +20,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2526e518d3c5be54badaa6125b13a220, type: 2}
   - {fileID: 11400000, guid: 2526e518d3c5be54badaa6125b13a220, type: 2}
   - {fileID: 11400000, guid: 2526e518d3c5be54badaa6125b13a220, type: 2}
+  isTransparent: 0

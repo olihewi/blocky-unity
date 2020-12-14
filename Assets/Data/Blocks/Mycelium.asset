@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00e592335132ff49bf24ba996b200d2, type: 3}
   m_Name: Mycelium
   m_EditorClassIdentifier: 
+  isAir: 0
   textures:
   - {fileID: 11400000, guid: 928da4f73b7d6894db0c1ff335dd4ba7, type: 2}
   - {fileID: 11400000, guid: 1fa96c4ba016fe046b33ef4ae5310da8, type: 2}
@@ -19,3 +20,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 67ab0a8e3c79829478aeb6bbdc9280e6, type: 2}
   - {fileID: 11400000, guid: 67ab0a8e3c79829478aeb6bbdc9280e6, type: 2}
   - {fileID: 11400000, guid: 67ab0a8e3c79829478aeb6bbdc9280e6, type: 2}
+  isTransparent: 0

@@ -11,9 +11,12 @@ public class World : MonoBehaviour
   public int horizontalRenderDistance = 3;
   public int verticalRenderDistance = 3;
 
+  public Block airBlock;
   public Block fillerBlock;
   public Block surfaceBlock;
   public Block almostSurfaceBlock;
+  public Block treeLog;
+  public Block treeLeaves;
   public int seaLevel = 16;
 
   public GameObject chunkPrefab;
@@ -102,6 +105,7 @@ public class World : MonoBehaviour
     thisChunk.transform.parent = transform;
     thisChunk.name = "Chunk [" + chunkX + ", " + chunkY + ", " + chunkZ + "]";
     Chunk thisChunkObject = thisChunk.GetComponent<Chunk>();
+    thisChunkObject.FillWithAir(airBlock);
 
     for (int x = 0; x < Chunk.chunkWidth; x++)
     {
@@ -151,6 +155,7 @@ public class World : MonoBehaviour
             if (chunkY * 16 + y + 1 >= perlin + seaLevel)
             {
               thisChunkObject.blocks[x, y, z] = surfaceBlock;
+              thisChunkObject.GenerateTree(x,y,z,treeLog,treeLeaves);
             }
           }
         }
@@ -209,7 +214,7 @@ public class World : MonoBehaviour
   {
     return chunks[new ChunkPos(worldX / 16, worldY / 16, worldZ / 16)].blocks[worldX % 16, worldY % 16, worldZ % 16];
   }
-  
+
 }
 
 public struct ChunkPos

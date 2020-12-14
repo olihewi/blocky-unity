@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00e592335132ff49bf24ba996b200d2, type: 3}
   m_Name: Pumpkin
   m_EditorClassIdentifier: 
+  isAir: 0
   textures:
   - {fileID: 11400000, guid: d43f6aed316ec2a42bc39d44bc3fc8e3, type: 2}
   - {fileID: 11400000, guid: d43f6aed316ec2a42bc39d44bc3fc8e3, type: 2}
@@ -19,3 +20,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 98b1f896ca906d84a894a9cf109f765c, type: 2}
   - {fileID: 11400000, guid: 98b1f896ca906d84a894a9cf109f765c, type: 2}
   - {fileID: 11400000, guid: 98b1f896ca906d84a894a9cf109f765c, type: 2}
+  isTransparent: 0

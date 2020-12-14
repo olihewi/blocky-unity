@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00e592335132ff49bf24ba996b200d2, type: 3}
   m_Name: Stripped Dark Oak Log
   m_EditorClassIdentifier: 
+  isAir: 0
   textures:
   - {fileID: 11400000, guid: 9d06b23f4a6462c48976bf297174ad14, type: 2}
   - {fileID: 11400000, guid: 9d06b23f4a6462c48976bf297174ad14, type: 2}
@@ -19,3 +20,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fa83aa1271bbd0041bbe5b480f945e36, type: 2}
   - {fileID: 11400000, guid: fa83aa1271bbd0041bbe5b480f945e36, type: 2}
   - {fileID: 11400000, guid: fa83aa1271bbd0041bbe5b480f945e36, type: 2}
+  isTransparent: 0

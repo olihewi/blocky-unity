@@ -23,9 +23,12 @@ namespace Editor
       worldScript.verticalRenderDistance = EditorGUILayout.IntSlider("Vertical Render Distance", worldScript.verticalRenderDistance, 1, 32);
       DrawUILine(new Color(0.5f, 0.5f, 0.5f));
       EditorGUILayout.LabelField("World Generation Options", EditorStyles.boldLabel);
+      worldScript.airBlock = (Block) EditorGUILayout.ObjectField("Air Block", worldScript.airBlock, typeof(Block), false);
       worldScript.fillerBlock = (Block) EditorGUILayout.ObjectField("Filler Block", worldScript.fillerBlock, typeof(Block), false);
       worldScript.surfaceBlock = (Block) EditorGUILayout.ObjectField("Surface Block", worldScript.surfaceBlock, typeof(Block), false);
       worldScript.almostSurfaceBlock = (Block) EditorGUILayout.ObjectField("Almost Surface Block", worldScript.almostSurfaceBlock, typeof(Block), false);
+      worldScript.treeLog = (Block) EditorGUILayout.ObjectField("Tree Log Block", worldScript.treeLog, typeof(Block), false);
+      worldScript.treeLeaves = (Block) EditorGUILayout.ObjectField("Tree Leaves Block", worldScript.treeLeaves, typeof(Block), false);
       worldScript.seaLevel = EditorGUILayout.IntField("Sea Level", worldScript.seaLevel);
       EditorGUILayout.LabelField("Height Map Noise Layers", EditorStyles.boldLabel);
       int noiseLayerIndex = 0;

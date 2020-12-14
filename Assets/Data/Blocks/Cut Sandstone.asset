@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00e592335132ff49bf24ba996b200d2, type: 3}
   m_Name: Cut Sandstone
   m_EditorClassIdentifier: 
+  isAir: 0
   textures:
   - {fileID: 11400000, guid: 17fed13ea602e4a48ab32daed42451da, type: 2}
   - {fileID: 11400000, guid: 17fed13ea602e4a48ab32daed42451da, type: 2}
@@ -19,3 +20,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d839fe4a8e407cf4d960976979d6c658, type: 2}
   - {fileID: 11400000, guid: d839fe4a8e407cf4d960976979d6c658, type: 2}
   - {fileID: 11400000, guid: d839fe4a8e407cf4d960976979d6c658, type: 2}
+  isTransparent: 0

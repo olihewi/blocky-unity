@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00e592335132ff49bf24ba996b200d2, type: 3}
   m_Name: Stripped Jungle Log
   m_EditorClassIdentifier: 
+  isAir: 0
   textures:
   - {fileID: 11400000, guid: 54ec2137e31404e40b8531b508786dc9, type: 2}
   - {fileID: 11400000, guid: 54ec2137e31404e40b8531b508786dc9, type: 2}
@@ -19,3 +20,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5f7655ec9c72e9e4abb2fbebd628aeb9, type: 2}
   - {fileID: 11400000, guid: 5f7655ec9c72e9e4abb2fbebd628aeb9, type: 2}
   - {fileID: 11400000, guid: 5f7655ec9c72e9e4abb2fbebd628aeb9, type: 2}
+  isTransparent: 0
