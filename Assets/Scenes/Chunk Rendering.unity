@@ -566,60 +566,13 @@ MonoBehaviour:
   fillerBlock: {fileID: 11400000, guid: 7c7e5d103e528344f90f9e10a7a13561, type: 2}
   surfaceBlock: {fileID: 11400000, guid: 6972a8d849909b04ca8260d37f1902ef, type: 2}
   almostSurfaceBlock: {fileID: 11400000, guid: 4e5b881374b4e0347a599536a8e90224, type: 2}
-  treeLog: {fileID: 11400000, guid: 959848874b6eead428e2b8bcd27d6637, type: 2}
-  treeLeaves: {fileID: 11400000, guid: ec305285a2d35054eb81a6cadb9b6e1c, type: 2}
   seaLevel: 0
   chunkPrefab: {fileID: 4985826216255150507, guid: f5a62086f0737884baaea68b3198b201,
     type: 3}
-  heightMapNoiseLayers:
-  - mSeed: 0
-    mFrequency: 0.02
-    mAmplitude: 4
-    blendingMode: 0
-    threshold: {x: 0, y: 1}
-    mNoiseType: 0
-    mRotationType3D: 0
-    mTransformType3D: 3
-    mFractalType: 0
-    mOctaves: 3
-    mLacunarity: 2
-    mGain: 0.5
-    mWeightedStrength: 0
-    mPingPongStength: 2
-    mFractalBounding: 0.5714286
-    mCellularDistanceFunction: 1
-    mCellularReturnType: 1
-    mCellularJitterModifier: 1
-    mWarpTransformType3D: 3
-    mDomainWarpAmp: 1
-  - mSeed: 3410466
-    mFrequency: 0.005
-    mAmplitude: 16
-    blendingMode: 0
-    threshold: {x: 0, y: 1}
-    mNoiseType: 0
-    mRotationType3D: 0
-    mTransformType3D: 3
-    mFractalType: 0
-    mOctaves: 3
-    mLacunarity: 2
-    mGain: 0.5
-    mWeightedStrength: 0
-    mPingPongStength: 2
-    mFractalBounding: 0.5714286
-    mCellularDistanceFunction: 1
-    mCellularReturnType: 1
-    mCellularJitterModifier: 1
-    mWarpTransformType3D: 3
-    mDomainWarpAmp: 1
+  biomes:
+  - {fileID: 11400000, guid: 864dc1e8b6b5dc84a8426e1987eb0075, type: 2}
+  - {fileID: 11400000, guid: 546b4eae631725446b469086bf9789cf, type: 2}
   caveNoiseLayers: []
-  treeTypes:
-  - {fileID: 11400000, guid: caf4ac92ca7877e4490ab1a0aa796362, type: 2}
-  - {fileID: 11400000, guid: 3135814f36e67ac459dfa6f5169542ef, type: 2}
-  - {fileID: 11400000, guid: 60fedac5ff5cc01438d59093222449f0, type: 2}
-  - {fileID: 11400000, guid: 91f0175310841e54a9601d91a0b10368, type: 2}
-  - {fileID: 11400000, guid: d6fc643cb59f1cb46851aff2700fed0e, type: 2}
-  - {fileID: 11400000, guid: 48c5b8a52276f844fb169ec32c2f9023, type: 2}
 --- !u!4 &962196733
 Transform:
   m_ObjectHideFlags: 0
@@ -650,7 +603,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1035386563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -676,7 +629,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1035386562}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -53.262615, y: 16.59191, z: 3.6703494}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

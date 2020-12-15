@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cactus Bottom
   m_EditorClassIdentifier: 
   uvs:
-  - {x: 0.375, y: 0.875}
+  - {x: 0.3125, y: 0.875}
+  - {x: 0.3125, y: 0.9375}
   - {x: 0.375, y: 0.9375}
-  - {x: 0.4375, y: 0.9375}
-  - {x: 0.4375, y: 0.875}
+  - {x: 0.375, y: 0.875}

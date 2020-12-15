@@ -28,39 +28,31 @@ namespace Editor
       worldScript.surfaceBlock = (Block) EditorGUILayout.ObjectField("Surface Block", worldScript.surfaceBlock, typeof(Block), false);
       worldScript.almostSurfaceBlock = (Block) EditorGUILayout.ObjectField("Almost Surface Block", worldScript.almostSurfaceBlock, typeof(Block), false);
       worldScript.seaLevel = EditorGUILayout.IntField("Sea Level", worldScript.seaLevel);
-      EditorGUILayout.LabelField("Height Map Noise Layers", EditorStyles.boldLabel);
-      int noiseLayerIndex = 0;
-      if (worldScript.heightMapNoiseLayers == null)
+      EditorGUILayout.LabelField("Biomes", EditorStyles.boldLabel);
+      for (int i = 0; i < worldScript.biomes.Count; i++)
       {
-        worldScript.heightMapNoiseLayers = new List<FastNoiseLite>();
-      }
-
-      foreach (FastNoiseLite noiseLayer in worldScript.heightMapNoiseLayers)
-      {
-        DrawUILine(new Color(0.5f, 0.5f, 0.5f));
-        EditorGUILayout.LabelField("Noise Layer", EditorStyles.boldLabel);
-        noiseLayer.mSeed = (int) (worldScript.seed * noiseLayerIndex * 0.75f);
-        noiseLayer.mNoiseType = (FastNoiseLite.NoiseType) EditorGUILayout.EnumPopup("Noise Type", noiseLayer.mNoiseType);
-        noiseLayer.mFrequency = EditorGUILayout.FloatField("Frequency", noiseLayer.mFrequency);
-        noiseLayer.mAmplitude = EditorGUILayout.FloatField("Amplitude", noiseLayer.mAmplitude);
-        noiseLayer.blendingMode = (FastNoiseLite.BlendingOperator) EditorGUILayout.EnumPopup("Blending Mode", noiseLayer.blendingMode);
-        noiseLayer.threshold = EditorGUILayout.Vector2Field("Threshold", noiseLayer.threshold);
-        noiseLayer.mFractalType = (FastNoiseLite.FractalType) EditorGUILayout.EnumPopup("Fractal Type", noiseLayer.mFractalType);
-        if (GUILayout.Button("Remove Layer"))
+        worldScript.biomes[i] = (Biome) EditorGUILayout.ObjectField(worldScript.biomes[i], typeof(Biome), false);
+        if (GUILayout.Button("Remove Biome"))
         {
-          worldScript.heightMapNoiseLayers.RemoveAt(noiseLayerIndex);
+          worldScript.biomes.RemoveAt(i);
         }
-
-        DrawUILine(new Color(0.5f, 0.5f, 0.5f));
-        noiseLayerIndex++;
       }
-      if (GUILayout.Button("New Layer"))
+      if (GUILayout.Button("New Biome"))
       {
-        worldScript.heightMapNoiseLayers.Add(new FastNoiseLite());
+        worldScript.biomes.Add(CreateInstance<Biome>());
       }
+      DrawUILine(new Color(0.5f,0.5f,0.5f));
+      EditorGUILayout.LabelField("Biome Map", EditorStyles.boldLabel);
+      worldScript.biomeMap.mSeed = worldScript.seed;
+      worldScript.biomeMap.mNoiseType = FastNoiseLite.NoiseType.Cellular;
+      worldScript.biomeMap.mCellularDistanceFunction = FastNoiseLite.CellularDistanceFunction.Hybrid;
+      worldScript.biomeMap.mCellularReturnType = FastNoiseLite.CellularReturnType.CellValue;
+      worldScript.biomeMap.mCellularJitterModifier = EditorGUILayout.Slider("Biome Jitter",worldScript.biomeMap.mCellularJitterModifier, 0, 3);
+      worldScript.biomeMap.mFrequency = EditorGUILayout.Slider("Biome Frequency", worldScript.biomeMap.mFrequency, 0.0001f, 0.1f);
+      worldScript.biomeBlendAmount = EditorGUILayout.IntSlider("Biome Blend", worldScript.biomeBlendAmount, 0, 8);
       DrawUILine(new Color(0.5f, 0.5f, 0.5f));
       EditorGUILayout.LabelField("Cave Noise Layers", EditorStyles.boldLabel);
-      noiseLayerIndex = 0;
+      int noiseLayerIndex = 0;
       if (worldScript.caveNoiseLayers == null)
       {
         worldScript.caveNoiseLayers = new List<FastNoiseLite>();
@@ -88,21 +80,6 @@ namespace Editor
       if (GUILayout.Button("New Layer"))
       {
         worldScript.caveNoiseLayers.Add(new FastNoiseLite());
-      }
-      
-      DrawUILine(new Color(0.5f, 0.5f, 0.5f));
-      EditorGUILayout.LabelField("Trees", EditorStyles.boldLabel);
-      for (int i = 0; i < worldScript.treeTypes.Count; i++)
-      {
-        worldScript.treeTypes[i] = (TreeType) EditorGUILayout.ObjectField("Tree", worldScript.treeTypes[i], typeof(TreeType), false);
-      }
-      if (GUILayout.Button("New Tree"))
-      {
-        worldScript.treeTypes.Add(CreateInstance<TreeType>());
-      }
-      if (GUILayout.Button("Remove Tree"))
-      {
-        worldScript.treeTypes.RemoveAt(worldScript.treeTypes.Count-1);
       }
       DrawUILine(new Color(0.5f, 0.5f, 0.5f));
       if (GUILayout.Button("Generate") && Application.isPlaying)

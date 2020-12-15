@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d54d6931cff73d64cb0572e72ebc0e5d, type: 3}
-  m_Name: Cactus Side
+  m_Script: {fileID: 11500000, guid: 8500328a2fd05354d87fbc9bea07ab5c, type: 3}
+  m_Name: Plains
   m_EditorClassIdentifier: 
-  uvs:
-  - {x: 0.375, y: 0.875}
-  - {x: 0.375, y: 0.9375}
-  - {x: 0.4375, y: 0.9375}
-  - {x: 0.4375, y: 0.875}
+  fillerBlock: {fileID: 11400000, guid: 7c7e5d103e528344f90f9e10a7a13561, type: 2}
+  blockLayers: []
+  heightMapNoiseLayers: []
+  treeTypes: []

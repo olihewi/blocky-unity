@@ -51,19 +51,24 @@ public class Builder : MonoBehaviour
       particleSystem.Play();
       thisChunk.blocks[blockIndexX, blockIndexY, blockIndexZ] = airBlock;
       thisChunk.GenerateMesh();
-      foreach (Chunk neighbour in thisChunk.adjacentChunks)
-      {
-        neighbour.GenerateMesh();
-      }
+
+      if (blockIndexX == 0) thisChunk.adjacentChunks[3].GenerateMesh();
+      else if (blockIndexX == Chunk.chunkWidth-1) thisChunk.adjacentChunks[5].GenerateMesh();
+      if (blockIndexY == 0) thisChunk.adjacentChunks[1].GenerateMesh();
+      else if (blockIndexY == Chunk.chunkHeight-1) thisChunk.adjacentChunks[0].GenerateMesh();
+      if (blockIndexZ == 0) thisChunk.adjacentChunks[2].GenerateMesh();
+      else if (blockIndexZ == Chunk.chunkDepth-1) thisChunk.adjacentChunks[4].GenerateMesh();
     }
     else
     {
       thisChunk.blocks[blockIndexX, blockIndexY, blockIndexZ] = inventory.currentBlock;
       thisChunk.GenerateMesh();
-      foreach (Chunk neighbour in thisChunk.adjacentChunks)
-      {
-        neighbour.GenerateMesh();
-      }
+      if (blockIndexX == 0) thisChunk.adjacentChunks[3].GenerateMesh();
+      else if (blockIndexX == Chunk.chunkWidth-1) thisChunk.adjacentChunks[5].GenerateMesh();
+      if (blockIndexY == 0) thisChunk.adjacentChunks[1].GenerateMesh();
+      else if (blockIndexY == Chunk.chunkHeight-1) thisChunk.adjacentChunks[0].GenerateMesh();
+      if (blockIndexZ == 0) thisChunk.adjacentChunks[2].GenerateMesh();
+      else if (blockIndexZ == Chunk.chunkDepth-1) thisChunk.adjacentChunks[4].GenerateMesh();
     }
   }
 }
