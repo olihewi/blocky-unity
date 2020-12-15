@@ -20,6 +20,7 @@ public class Chunk : MonoBehaviour
   
   public void GenerateMesh()
   {
+    if (!isGenerated) return;
     Mesh mesh = new Mesh();
     Mesh transparentMesh = new Mesh();
 

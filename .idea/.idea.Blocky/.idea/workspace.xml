@@ -22,7 +22,9 @@
     <list default="true" id="25ed5fa4-01c2-4521-a89d-283679d9330f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blocky/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blocky/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Chunk Rendering.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Chunk Rendering.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/WorldGenEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/WorldGenEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DestroyParticlesOnFinish.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DestroyParticlesOnFinish.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/World.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,11 +55,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/BlockTile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Block.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FreeCamera.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TreeType.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Editor/WorldGenEditor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DestroyParticlesOnFinish.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Builder.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Editor/WorldGenEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World.cs" />
       </list>
     </option>
@@ -109,7 +111,8 @@
       <workItem from="1606390629750" duration="18020000" />
       <workItem from="1606653621761" duration="8563000" />
       <workItem from="1606681877113" duration="5825000" />
-      <workItem from="1607942941998" duration="26149000" />
+      <workItem from="1607942941998" duration="27017000" />
+      <workItem from="1608029570738" duration="4484000" />
     </task>
     <servers />
   </component>

@@ -48,15 +48,22 @@ public class Builder : MonoBehaviour
       ParticleSystem.TextureSheetAnimationModule tex = particleSystem.textureSheetAnimation;
       Vector2 uvStart = thisChunk.blocks[blockIndexX, blockIndexY, blockIndexZ].textures[3].uvs[0];
       tex.startFrame = uvStart.x/16 + (1-uvStart.y) + 1/256f - 16/256f;
-      Debug.Log(Mathf.FloorToInt(uvStart.x*16) + Mathf.FloorToInt((1-uvStart.y)*256));
       particleSystem.Play();
       thisChunk.blocks[blockIndexX, blockIndexY, blockIndexZ] = airBlock;
       thisChunk.GenerateMesh();
+      foreach (Chunk neighbour in thisChunk.adjacentChunks)
+      {
+        neighbour.GenerateMesh();
+      }
     }
     else
     {
       thisChunk.blocks[blockIndexX, blockIndexY, blockIndexZ] = inventory.currentBlock;
       thisChunk.GenerateMesh();
+      foreach (Chunk neighbour in thisChunk.adjacentChunks)
+      {
+        neighbour.GenerateMesh();
+      }
     }
   }
 }

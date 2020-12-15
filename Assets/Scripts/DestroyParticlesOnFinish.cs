@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class DestroyParticlesOnFinish : MonoBehaviour
 {
-    private ParticleSystem ps;
+    private float _timer = 0f;
     private void Update()
     {
-        if (ps && !ps.IsAlive())
+        _timer += Time.deltaTime;
+        if (_timer >= 1)
+        {
             Destroy(gameObject);
+        }
     }
 }

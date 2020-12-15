@@ -67,8 +67,7 @@ public class World : MonoBehaviour
             if ((new Vector3(x,y,z) - new Vector3(currentChunk.x,currentChunk.y,currentChunk.z)).magnitude > horizontalRenderDistance)
               continue;
             ChunkPos cp = new ChunkPos(x,y,z);
-            bool containsKey = chunks.ContainsKey(cp);
-            if ((!containsKey || !chunks[cp].isGenerated) && !chunksToGenerate.Contains(cp))
+            if (!chunksToGenerate.Contains(cp) && (!chunks.TryGetValue(cp, out Chunk thisChunk) || !thisChunk.isGenerated))
             {
               chunksToGenerate.Add(cp);
             }
@@ -98,10 +97,6 @@ public class World : MonoBehaviour
       if (chunksToGenerate.Count == 0) break;
       ChunkPos chunkToGen = chunksToGenerate[0];
       Chunk thisChunk = GenerateChunk(chunkToGen.x, chunkToGen.y, chunkToGen.z);
-      if (!chunks.ContainsKey(chunkToGen))
-      {
-        chunks.Add(chunkToGen,thisChunk);
-      }
       chunksToGenerate.Remove(chunkToGen);
     }
     
@@ -109,18 +104,15 @@ public class World : MonoBehaviour
 
   private Chunk GenerateChunk(int chunkX, int chunkY, int chunkZ)
   {
-    Chunk thisChunkObject;
-    if (chunks.ContainsKey(new ChunkPos(chunkX, chunkY, chunkZ)))
-    {
-      thisChunkObject = chunks[new ChunkPos(chunkX,chunkY,chunkZ)];
-    }
-    else
+    ChunkPos thisChunkPos = new ChunkPos(chunkX, chunkY, chunkZ);
+    if (!chunks.TryGetValue(thisChunkPos, out Chunk thisChunkObject))
     {
       GameObject thisChunk = GameObject.Instantiate(chunkPrefab, new Vector3(chunkX * Chunk.chunkWidth, chunkY * Chunk.chunkHeight, chunkZ * Chunk.chunkDepth), Quaternion.identity);
-      thisChunk.transform.parent = transform;
-      thisChunk.name = "Chunk [" + chunkX + ", " + chunkY + ", " + chunkZ + "]";
-      thisChunkObject = thisChunk.GetComponent<Chunk>();
-      thisChunkObject.FillWithAir(airBlock);
+            thisChunk.transform.parent = transform;
+            thisChunk.name = "Chunk [" + chunkX + ", " + chunkY + ", " + chunkZ + "]";
+            thisChunkObject = thisChunk.GetComponent<Chunk>();
+            thisChunkObject.FillWithAir(airBlock);
+            chunks.Add(thisChunkPos,thisChunkObject);
     }
 
     thisChunkObject.thisChunkPos = new ChunkPos(chunkX, chunkY, chunkZ);
@@ -187,14 +179,14 @@ public class World : MonoBehaviour
             {
               thisChunkObject.blocks[x, y, z] = surfaceBlock;
               GenerateTreeInChunk(chunkX*Chunk.chunkWidth+x,chunkY*Chunk.chunkHeight+y,chunkZ*Chunk.chunkDepth+z);
-              //thisChunkObject.GenerateTree(x,y,z,treeLog,treeLeaves);
             }
-            
             
           }
         }
       }
     }
+
+    thisChunkObject.blocks[0, 0, 0] = fillerBlock;
 
     Chunk neighbourChunk;
     if (chunks.TryGetValue(new ChunkPos(chunkX, chunkY + 1, chunkZ), out neighbourChunk)) // Top
@@ -203,66 +195,54 @@ public class World : MonoBehaviour
       thisChunkObject.adjacentChunks[0] = neighbourChunk;
       neighbourChunk.GenerateMesh();
     }
-
     if (chunks.TryGetValue(new ChunkPos(chunkX, chunkY - 1, chunkZ), out neighbourChunk)) // Bottom
     {
       neighbourChunk.adjacentChunks[0] = thisChunkObject;
       thisChunkObject.adjacentChunks[1] = neighbourChunk;
       neighbourChunk.GenerateMesh();
     }
-
     if (chunks.TryGetValue(new ChunkPos(chunkX, chunkY, chunkZ - 1), out neighbourChunk)) // Front
     {
       neighbourChunk.adjacentChunks[4] = thisChunkObject;
       thisChunkObject.adjacentChunks[2] = neighbourChunk;
       neighbourChunk.GenerateMesh();
     }
-
     if (chunks.TryGetValue(new ChunkPos(chunkX, chunkY, chunkZ + 1), out neighbourChunk)) // Back
     {
       neighbourChunk.adjacentChunks[2] = thisChunkObject;
       thisChunkObject.adjacentChunks[4] = neighbourChunk;
       neighbourChunk.GenerateMesh();
     }
-
     if (chunks.TryGetValue(new ChunkPos(chunkX - 1, chunkY, chunkZ), out neighbourChunk)) // Left
     {
       neighbourChunk.adjacentChunks[5] = thisChunkObject;
       thisChunkObject.adjacentChunks[3] = neighbourChunk;
       neighbourChunk.GenerateMesh();
     }
-
     if (chunks.TryGetValue(new ChunkPos(chunkX + 1, chunkY, chunkZ), out neighbourChunk)) // Right
     {
       neighbourChunk.adjacentChunks[3] = thisChunkObject;
       thisChunkObject.adjacentChunks[5] = neighbourChunk;
       neighbourChunk.GenerateMesh();
     }
-
-    thisChunkObject.GenerateMesh();
+    
     thisChunkObject.isGenerated = true;
-
+    thisChunkObject.GenerateMesh();
     return thisChunkObject;
   }
 
   private void SetBlock(int worldX, int worldY, int worldZ, Block block)
   {
-    Chunk thisChunk;
     ChunkPos thisChunkPos = new ChunkPos(Mathf.FloorToInt(worldX / (float)Chunk.chunkWidth), Mathf.FloorToInt(worldY / (float)Chunk.chunkHeight), Mathf.FloorToInt(worldZ / (float)Chunk.chunkDepth));
-    if (chunks.ContainsKey(thisChunkPos))
+    if (!chunks.TryGetValue(thisChunkPos, out Chunk thisChunk))
     {
-      thisChunk = chunks[thisChunkPos];
-    }
-    else
-    {
-      GameObject thisChunkObject = GameObject.Instantiate(chunkPrefab, new Vector3(thisChunkPos.x * Chunk.chunkWidth, thisChunkPos.y * Chunk.chunkHeight, thisChunkPos.z * Chunk.chunkDepth), Quaternion.identity);
+      GameObject thisChunkObject = Instantiate(chunkPrefab, new Vector3(thisChunkPos.x * Chunk.chunkWidth, thisChunkPos.y * Chunk.chunkHeight, thisChunkPos.z * Chunk.chunkDepth), Quaternion.identity);
       thisChunkObject.transform.parent = transform;
       thisChunkObject.name = "Chunk [" + thisChunkPos.x + ", " + thisChunkPos.y + ", " + thisChunkPos.z + "]";
       thisChunk = thisChunkObject.GetComponent<Chunk>();
       thisChunk.FillWithAir(airBlock);
       chunks.Add(thisChunkPos,thisChunk);
     }
-    
     thisChunk.blocks[MathMod(worldX,Chunk.chunkWidth), MathMod(worldY,Chunk.chunkHeight), MathMod(worldZ,Chunk.chunkDepth)] = block;
   }
 

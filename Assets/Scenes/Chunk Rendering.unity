@@ -429,7 +429,8 @@ MonoBehaviour:
   world: {fileID: 962196732}
   inventory: {fileID: 342452571}
   airBlock: {fileID: 11400000, guid: 15a5ba11acabfed4b904bc9c7c1d07ba, type: 2}
-  breakBlockParticles: {fileID: 0}
+  breakBlockParticles: {fileID: 6463047416645665031, guid: a2ea177f62d722545a3c832bdb34b562,
+    type: 3}
   buildDistance: 8
   groundLayer:
     serializedVersion: 2
@@ -611,6 +612,7 @@ MonoBehaviour:
     mCellularJitterModifier: 1
     mWarpTransformType3D: 3
     mDomainWarpAmp: 1
+  caveNoiseLayers: []
   treeTypes:
   - {fileID: 11400000, guid: caf4ac92ca7877e4490ab1a0aa796362, type: 2}
   - {fileID: 11400000, guid: 3135814f36e67ac459dfa6f5169542ef, type: 2}
