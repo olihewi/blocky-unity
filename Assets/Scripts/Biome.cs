@@ -8,6 +8,7 @@ public class Biome : ScriptableObject
   public Block fillerBlock;
   public List<BlockLayer> blockLayers;
   public List<FastNoiseLite> heightMapNoiseLayers;
+  public int surfaceHeight = 0;
   public List<TreeBiomeInstance> treeTypes;
   public Color fogColor = new Color(0.75f,0.875f,0.95f);
   public Material skyboxMaterial;

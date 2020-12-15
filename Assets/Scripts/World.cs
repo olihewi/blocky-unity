@@ -183,6 +183,8 @@ public class World : MonoBehaviour
           {
             thisBlendPerlin += noiseLayer.GetNoise(chunkX * Chunk.chunkWidth + x, chunkZ * Chunk.chunkDepth + z) * noiseLayer.mAmplitude;
           }
+
+          thisBlendPerlin += blend.Key.surfaceHeight;
           perlin += thisBlendPerlin * blend.Value;
         }
 

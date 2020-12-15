@@ -61,7 +61,8 @@ namespace Editor
       {
         biomeScript.heightMapNoiseLayers.Add(new FastNoiseLite());
       }
-      
+
+      biomeScript.surfaceHeight = EditorGUILayout.IntSlider("Surface Height", biomeScript.surfaceHeight, 0, 64);
       DrawUILine(new Color(0.5f, 0.5f, 0.5f));
       EditorGUILayout.LabelField("Trees", EditorStyles.boldLabel);
       if (biomeScript.treeTypes == null)

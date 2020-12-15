@@ -16,4 +16,4 @@ MonoBehaviour:
   bark: {fileID: 11400000, guid: 128be5bec08180d419ea784233766ef3, type: 2}
   leaves: {fileID: 11400000, guid: 8d658ef19f0d55c45af6abea066471ec, type: 2}
   trunkWidth: 2
-  leavesWidth: 2
+  leavesWidth: 3
