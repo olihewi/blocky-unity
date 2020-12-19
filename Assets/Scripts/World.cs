@@ -13,15 +13,12 @@ public class World : MonoBehaviour
   public int verticalRenderDistance = 3;
 
   public Block airBlock;
-  public Block fillerBlock;
-  public Block surfaceBlock;
-  public Block almostSurfaceBlock;
   public int seaLevel = 16;
 
   public GameObject chunkPrefab;
   public List<Biome> biomes;
   public FastNoiseLite biomeMap;
-  public int biomeBlendAmount;
+  public int biomeBlendAmount = 2;
   public List<FastNoiseLite> caveNoiseLayers;
 
   public Dictionary<ChunkPos, Chunk> chunks = new Dictionary<ChunkPos, Chunk>();
@@ -46,9 +43,6 @@ public class World : MonoBehaviour
         index++;
       }
     }
-
-    //RenderSettings.fogColor = biomes[0].fogColor;
-    //RenderSettings.skybox = biomes[0].skyboxMaterial;
   }
   
 
@@ -111,6 +105,12 @@ public class World : MonoBehaviour
         }
       }
     }
+    chunksToGenerate.Sort(delegate(ChunkPos a, ChunkPos b)
+    {
+      int magnitudeA = Mathf.FloorToInt((new Vector3(a.x,a.y,a.z) - new Vector3(playerChunkPos.x,playerChunkPos.y,playerChunkPos.z)).magnitude);
+      int magnitudeB = Mathf.FloorToInt((new Vector3(b.x,b.y,b.z) - new Vector3(playerChunkPos.x,playerChunkPos.y,playerChunkPos.z)).magnitude);
+      return magnitudeA - magnitudeB;
+    });
     List<ChunkPos> chunksToDelete = new List<ChunkPos>();
     foreach (KeyValuePair<ChunkPos, Chunk> chunk in chunks)
     {
@@ -142,13 +142,17 @@ public class World : MonoBehaviour
 
     thisChunkObject.thisChunkPos = new ChunkPos(chunkX, chunkY, chunkZ);
     
-    Biome[,] chunkBiomes = new Biome[Chunk.chunkWidth + 2 * biomeBlendAmount,Chunk.chunkHeight + 2 * biomeBlendAmount];
+    Biome[][] chunkBiomes = new Biome[Chunk.chunkWidth + 2 * biomeBlendAmount][];
+    for (int index = 0; index < Chunk.chunkWidth + 2 * biomeBlendAmount; index++)
+    {
+      chunkBiomes[index] = new Biome[Chunk.chunkHeight + 2 * biomeBlendAmount];
+    }
 
     for (int x = -biomeBlendAmount; x < Chunk.chunkWidth + biomeBlendAmount; x++)
     {
       for (int z = -biomeBlendAmount; z < Chunk.chunkWidth + biomeBlendAmount; z++)
       {
-        chunkBiomes[x + biomeBlendAmount,z + biomeBlendAmount] = GetBiome(chunkX * Chunk.chunkWidth + x, chunkZ * Chunk.chunkDepth + z);
+        chunkBiomes[x + biomeBlendAmount][z + biomeBlendAmount] = GetBiome(chunkX * Chunk.chunkWidth + x, chunkZ * Chunk.chunkDepth + z);
       }
     }
 
@@ -157,7 +161,7 @@ public class World : MonoBehaviour
       for (int z = 0; z < Chunk.chunkDepth; z++)
       {
         float perlin = 0f;
-        Biome thisBiome = chunkBiomes[x + biomeBlendAmount,z + biomeBlendAmount];
+        Biome thisBiome = chunkBiomes[x + biomeBlendAmount][z + biomeBlendAmount];
         Dictionary<Biome,int> biomeBlend = new Dictionary<Biome, int>();
         int numOfBiomes = 0;
         for (int blendX = x; blendX <= x + biomeBlendAmount * 2; blendX++)
@@ -165,13 +169,13 @@ public class World : MonoBehaviour
           for (int blendZ = z; blendZ <= z + biomeBlendAmount * 2; blendZ++)
           {
             numOfBiomes++;
-            if (biomeBlend.ContainsKey(chunkBiomes[blendX, blendZ]))
+            if (biomeBlend.ContainsKey(chunkBiomes[blendX][blendZ]))
             {
-              biomeBlend[chunkBiomes[blendX, blendZ]]++;
+              biomeBlend[chunkBiomes[blendX][blendZ]]++;
             }
             else
             {
-              biomeBlend.Add(chunkBiomes[blendX, blendZ], 1);
+              biomeBlend.Add(chunkBiomes[blendX][blendZ], 1);
             }
           }
         }

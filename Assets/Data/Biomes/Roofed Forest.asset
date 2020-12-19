@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8500328a2fd05354d87fbc9bea07ab5c, type: 3}
-  m_Name: Forest
+  m_Name: Roofed Forest
   m_EditorClassIdentifier: 
   fillerBlock: {fileID: 11400000, guid: 7c7e5d103e528344f90f9e10a7a13561, type: 2}
   blockLayers:
@@ -19,29 +19,9 @@ MonoBehaviour:
   - block: {fileID: 11400000, guid: 6972a8d849909b04ca8260d37f1902ef, type: 2}
     height: 1
   heightMapNoiseLayers:
-  - mSeed: -3485859
+  - mSeed: 1337
     mFrequency: 0.02
-    mAmplitude: 4
-    blendingMode: 0
-    threshold: {x: 0, y: 1}
-    mNoiseType: 0
-    mRotationType3D: 0
-    mTransformType3D: 3
-    mFractalType: 0
-    mOctaves: 3
-    mLacunarity: 2
-    mGain: 0.5
-    mWeightedStrength: 0
-    mPingPongStength: 2
-    mFractalBounding: 0.5714286
-    mCellularDistanceFunction: 1
-    mCellularReturnType: 1
-    mCellularJitterModifier: 1
-    mWarpTransformType3D: 3
-    mDomainWarpAmp: 1
-  - mSeed: -6971718
-    mFrequency: 0.005
-    mAmplitude: 16
+    mAmplitude: 8
     blendingMode: 0
     threshold: {x: 0, y: 1}
     mNoiseType: 0
@@ -61,9 +41,7 @@ MonoBehaviour:
     mDomainWarpAmp: 1
   surfaceHeight: 0
   treeTypes:
-  - treeType: {fileID: 11400000, guid: caf4ac92ca7877e4490ab1a0aa796362, type: 2}
-    probability: 0.01
-  - treeType: {fileID: 11400000, guid: 3135814f36e67ac459dfa6f5169542ef, type: 2}
-    probability: 0.002
+  - treeType: {fileID: 11400000, guid: d6fc643cb59f1cb46851aff2700fed0e, type: 2}
+    probability: 0.015
   fogColor: {r: 0.75, g: 0.875, b: 0.95, a: 1}
   skyboxMaterial: {fileID: 2100000, guid: 9aa8ed67591432941bb76f12eb23ff91, type: 2}

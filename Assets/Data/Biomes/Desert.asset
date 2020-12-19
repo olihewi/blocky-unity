@@ -12,7 +12,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8500328a2fd05354d87fbc9bea07ab5c, type: 3}
   m_Name: Desert
   m_EditorClassIdentifier: 
-  fillerBlock: {fileID: 0}
-  blockLayers: []
-  heightMapNoiseLayers: []
-  treeTypes: []
+  fillerBlock: {fileID: 11400000, guid: 7c7e5d103e528344f90f9e10a7a13561, type: 2}
+  blockLayers:
+  - block: {fileID: 11400000, guid: e0114f408603dad4f8168ddd5967c643, type: 2}
+    height: 8
+  - block: {fileID: 11400000, guid: 4dc9f757d8ef19b47bdefbe956dac1bd, type: 2}
+    height: 4
+  heightMapNoiseLayers:
+  - mSeed: -3485859
+    mFrequency: 0.02
+    mAmplitude: 8
+    blendingMode: 0
+    threshold: {x: 0, y: 1}
+    mNoiseType: 0
+    mRotationType3D: 0
+    mTransformType3D: 3
+    mFractalType: 0
+    mOctaves: 3
+    mLacunarity: 2
+    mGain: 0.5
+    mWeightedStrength: 0
+    mPingPongStength: 2
+    mFractalBounding: 0.5714286
+    mCellularDistanceFunction: 1
+    mCellularReturnType: 1
+    mCellularJitterModifier: 1
+    mWarpTransformType3D: 3
+    mDomainWarpAmp: 1
+  surfaceHeight: 0
+  treeTypes:
+  - treeType: {fileID: 11400000, guid: 13bd47ff77be2a947bdb2afa28c17081, type: 2}
+    probability: 0.01
+  fogColor: {r: 0.75, g: 0.875, b: 0.95, a: 1}
+  skyboxMaterial: {fileID: 2100000, guid: 9aa8ed67591432941bb76f12eb23ff91, type: 2}

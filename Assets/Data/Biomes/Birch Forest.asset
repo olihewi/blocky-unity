@@ -13,8 +13,55 @@ MonoBehaviour:
   m_Name: Birch Forest
   m_EditorClassIdentifier: 
   fillerBlock: {fileID: 11400000, guid: 7c7e5d103e528344f90f9e10a7a13561, type: 2}
-  blockLayers: []
-  heightMapNoiseLayers: []
-  treeTypes: []
+  blockLayers:
+  - block: {fileID: 11400000, guid: 4e5b881374b4e0347a599536a8e90224, type: 2}
+    height: 4
+  - block: {fileID: 11400000, guid: 6972a8d849909b04ca8260d37f1902ef, type: 2}
+    height: 1
+  heightMapNoiseLayers:
+  - mSeed: -3485859
+    mFrequency: 0.02
+    mAmplitude: 4
+    blendingMode: 0
+    threshold: {x: 0, y: 1}
+    mNoiseType: 0
+    mRotationType3D: 0
+    mTransformType3D: 3
+    mFractalType: 0
+    mOctaves: 3
+    mLacunarity: 2
+    mGain: 0.5
+    mWeightedStrength: 0
+    mPingPongStength: 2
+    mFractalBounding: 0.5714286
+    mCellularDistanceFunction: 1
+    mCellularReturnType: 1
+    mCellularJitterModifier: 1
+    mWarpTransformType3D: 3
+    mDomainWarpAmp: 1
+  - mSeed: -6971718
+    mFrequency: 0.005
+    mAmplitude: 16
+    blendingMode: 0
+    threshold: {x: 0, y: 1}
+    mNoiseType: 0
+    mRotationType3D: 0
+    mTransformType3D: 3
+    mFractalType: 0
+    mOctaves: 3
+    mLacunarity: 2
+    mGain: 0.5
+    mWeightedStrength: 0
+    mPingPongStength: 2
+    mFractalBounding: 0.5714286
+    mCellularDistanceFunction: 1
+    mCellularReturnType: 1
+    mCellularJitterModifier: 1
+    mWarpTransformType3D: 3
+    mDomainWarpAmp: 1
+  surfaceHeight: 0
+  treeTypes:
+  - treeType: {fileID: 11400000, guid: 3135814f36e67ac459dfa6f5169542ef, type: 2}
+    probability: 0.01
   fogColor: {r: 0.75, g: 0.875, b: 0.95, a: 1}
-  skyboxMaterial: {fileID: 0}
+  skyboxMaterial: {fileID: 2100000, guid: 9aa8ed67591432941bb76f12eb23ff91, type: 2}

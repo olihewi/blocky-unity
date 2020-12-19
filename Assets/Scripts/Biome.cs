@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Biome", menuName = "Blocky/Biome")]
+[System.Serializable]
 public class Biome : ScriptableObject
 {
   public Block fillerBlock;
@@ -18,15 +19,4 @@ public class BlockLayer
 {
   public Block block;
   public int height = 1;
-}
-
-public class BiomeBlend
-{
-  public BiomeBlend(Biome _biome)
-  {
-    biome = _biome;
-    count = 0;
-  }
-  public Biome biome;
-  public int count;
 }

@@ -12,6 +12,7 @@ namespace Editor
     {
       DrawUILine(new Color(0.5f,0.5f,0.5f));
       Biome biomeScript = (Biome) target;
+      EditorGUI.BeginChangeCheck();
       biomeScript.fillerBlock = (Block) EditorGUILayout.ObjectField("Filler Block", biomeScript.fillerBlock, typeof(Block), false);
       DrawUILine(new Color(0.5f,0.5f,0.5f));
       EditorGUILayout.LabelField("Block Layers", EditorStyles.boldLabel);
@@ -85,6 +86,11 @@ namespace Editor
       DrawUILine(new Color(0.5f, 0.5f, 0.5f));
       biomeScript.fogColor = EditorGUILayout.ColorField("Fog Colour", biomeScript.fogColor);
       biomeScript.skyboxMaterial = (Material) EditorGUILayout.ObjectField("Skybox Material", biomeScript.skyboxMaterial, typeof(Material), false);
+      if (EditorGUI.EndChangeCheck())
+      {
+        Debug.Log("Ended change check");
+        EditorUtility.SetDirty(target);
+      }
 
     }
     private static void DrawUILine(Color color, int thickness = 1, int padding = 10)

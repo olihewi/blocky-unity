@@ -12,9 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8500328a2fd05354d87fbc9bea07ab5c, type: 3}
   m_Name: Glacier
   m_EditorClassIdentifier: 
-  fillerBlock: {fileID: 0}
+  fillerBlock: {fileID: 11400000, guid: 4f5bc03c7823d3b4cac3198c901c18a8, type: 2}
   blockLayers: []
-  heightMapNoiseLayers: []
+  heightMapNoiseLayers:
+  - mSeed: 1337
+    mFrequency: 0.02
+    mAmplitude: 4
+    blendingMode: 0
+    threshold: {x: 0, y: 1}
+    mNoiseType: 0
+    mRotationType3D: 0
+    mTransformType3D: 3
+    mFractalType: 0
+    mOctaves: 3
+    mLacunarity: 2
+    mGain: 0.5
+    mWeightedStrength: 0
+    mPingPongStength: 2
+    mFractalBounding: 0.5714286
+    mCellularDistanceFunction: 1
+    mCellularReturnType: 1
+    mCellularJitterModifier: 1
+    mWarpTransformType3D: 3
+    mDomainWarpAmp: 1
+  surfaceHeight: 32
   treeTypes: []
   fogColor: {r: 0.75, g: 0.875, b: 0.95, a: 1}
-  skyboxMaterial: {fileID: 0}
+  skyboxMaterial: {fileID: 2100000, guid: 9aa8ed67591432941bb76f12eb23ff91, type: 2}

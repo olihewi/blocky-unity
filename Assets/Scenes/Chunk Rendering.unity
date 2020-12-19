@@ -559,19 +559,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 342452568}
-  seed: 4547289
-  horizontalRenderDistance: 5
+  seed: -4647812
+  horizontalRenderDistance: 6
   verticalRenderDistance: 3
   airBlock: {fileID: 11400000, guid: 15a5ba11acabfed4b904bc9c7c1d07ba, type: 2}
-  fillerBlock: {fileID: 11400000, guid: 7c7e5d103e528344f90f9e10a7a13561, type: 2}
-  surfaceBlock: {fileID: 11400000, guid: 6972a8d849909b04ca8260d37f1902ef, type: 2}
-  almostSurfaceBlock: {fileID: 11400000, guid: 4e5b881374b4e0347a599536a8e90224, type: 2}
   seaLevel: 0
   chunkPrefab: {fileID: 4985826216255150507, guid: f5a62086f0737884baaea68b3198b201,
     type: 3}
   biomes:
   - {fileID: 11400000, guid: 864dc1e8b6b5dc84a8426e1987eb0075, type: 2}
   - {fileID: 11400000, guid: 546b4eae631725446b469086bf9789cf, type: 2}
+  - {fileID: 11400000, guid: 9d60da3f87e0fee41b13475aa4928197, type: 2}
+  - {fileID: 11400000, guid: 48e2854aff6bc13449edfb21ed5224d6, type: 2}
+  - {fileID: 11400000, guid: 49e6994108852dc45ac409d5ef6b91ab, type: 2}
+  - {fileID: 11400000, guid: 4e3cb97978418e24192cb43d7e86b611, type: 2}
+  biomeMap:
+    mSeed: -4647812
+    mFrequency: 0.01
+    mAmplitude: 0
+    blendingMode: 0
+    threshold: {x: 0, y: 0}
+    mNoiseType: 2
+    mRotationType3D: 0
+    mTransformType3D: 0
+    mFractalType: 0
+    mOctaves: 0
+    mLacunarity: 0
+    mGain: 0
+    mWeightedStrength: 0
+    mPingPongStength: 0
+    mFractalBounding: 0
+    mCellularDistanceFunction: 3
+    mCellularReturnType: 0
+    mCellularJitterModifier: 1
+    mWarpTransformType3D: 0
+    mDomainWarpAmp: 0
+  biomeBlendAmount: 2
   caveNoiseLayers: []
 --- !u!4 &962196733
 Transform:

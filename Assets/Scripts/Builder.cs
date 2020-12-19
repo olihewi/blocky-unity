@@ -26,7 +26,7 @@ public class Builder : MonoBehaviour
     }
     else
     {
-      targetPoint = hitInfo.point + hitInfo.normal * 0.1f; // move towards the block
+      targetPoint = hitInfo.point + hitInfo.normal * 0.1f; // move out of the block
     }
 
     int chunkPosX = Mathf.FloorToInt(targetPoint.x / Chunk.chunkWidth);

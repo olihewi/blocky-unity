@@ -24,9 +24,6 @@ namespace Editor
       DrawUILine(new Color(0.5f, 0.5f, 0.5f));
       EditorGUILayout.LabelField("World Generation Options", EditorStyles.boldLabel);
       worldScript.airBlock = (Block) EditorGUILayout.ObjectField("Air Block", worldScript.airBlock, typeof(Block), false);
-      worldScript.fillerBlock = (Block) EditorGUILayout.ObjectField("Filler Block", worldScript.fillerBlock, typeof(Block), false);
-      worldScript.surfaceBlock = (Block) EditorGUILayout.ObjectField("Surface Block", worldScript.surfaceBlock, typeof(Block), false);
-      worldScript.almostSurfaceBlock = (Block) EditorGUILayout.ObjectField("Almost Surface Block", worldScript.almostSurfaceBlock, typeof(Block), false);
       worldScript.seaLevel = EditorGUILayout.IntField("Sea Level", worldScript.seaLevel);
       EditorGUILayout.LabelField("Biomes", EditorStyles.boldLabel);
       for (int i = 0; i < worldScript.biomes.Count; i++)

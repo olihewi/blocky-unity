@@ -6,15 +6,16 @@ using UnityEngine;
 [RequireComponent(typeof(MeshRenderer))]
 public class Chunk : MonoBehaviour
 {
+  
   public static int chunkWidth = 16;
   public static int chunkHeight = 16;
   public static int chunkDepth = 16;
+  public Block[,,] blocks = new Block[chunkWidth, chunkHeight, chunkDepth];
 
   public GameObject transparentChild;
   public bool isGenerated = false;
-
-  //public GameObject cubePrefab;
-  public Block[,,] blocks = new Block[chunkWidth, chunkHeight, chunkDepth];
+  
+  
   public ChunkPos thisChunkPos;
   public Chunk[] adjacentChunks = new Chunk[6];
   
