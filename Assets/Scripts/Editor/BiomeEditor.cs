@@ -88,7 +88,6 @@ namespace Editor
       biomeScript.skyboxMaterial = (Material) EditorGUILayout.ObjectField("Skybox Material", biomeScript.skyboxMaterial, typeof(Material), false);
       if (EditorGUI.EndChangeCheck())
       {
-        Debug.Log("Ended change check");
         EditorUtility.SetDirty(target);
       }
 

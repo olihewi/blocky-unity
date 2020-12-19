@@ -20,15 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25ed5fa4-01c2-4521-a89d-283679d9330f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Blocky/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blocky/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Data/Trees/Jungle Tree.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Trees/Jungle Tree.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Chunk Rendering.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Chunk Rendering.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Biome.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Biome.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/BiomeEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/BiomeEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/WorldGenEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/WorldGenEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +115,7 @@
       <workItem from="1607942941998" duration="27017000" />
       <workItem from="1608029570738" duration="27182000" />
       <workItem from="1608069276099" duration="13828000" />
-      <workItem from="1608388900241" duration="866000" />
+      <workItem from="1608388900241" duration="1251000" />
     </task>
     <servers />
   </component>
