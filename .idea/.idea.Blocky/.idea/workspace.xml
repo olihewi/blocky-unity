@@ -20,7 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25ed5fa4-01c2-4521-a89d-283679d9330f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Editor/BiomeEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Editor/BiomeEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Blocky/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blocky/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Blocky/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blocky/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Biome.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Biome.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Block.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Block.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BlockTile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BlockTile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,17 +58,17 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Third Party/FastNoiseLite.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Inventory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ChunkGenerationJob.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/BlockTile.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Block.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FreeCamera.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DestroyParticlesOnFinish.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TreeType.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Editor/WorldGenEditor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Editor/BiomeEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Biome.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Block.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BlockTile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Builder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Editor/BiomeEditor.cs" />
       </list>
     </option>
   </component>
@@ -77,6 +86,14 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Builds\Blocky.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="F:\Games\Blocky\Builds" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -115,7 +132,9 @@
       <workItem from="1607942941998" duration="27017000" />
       <workItem from="1608029570738" duration="27182000" />
       <workItem from="1608069276099" duration="13828000" />
-      <workItem from="1608388900241" duration="1251000" />
+      <workItem from="1608388900241" duration="1377000" />
+      <workItem from="1610204374775" duration="1470000" />
+      <workItem from="1610964930918" duration="7359000" />
     </task>
     <servers />
   </component>
@@ -216,9 +235,9 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="92" y="92" width="2376" height="1256" key="VCS.FileHistoryDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1603398355129" />
-    <state x="943" y="325" width="672" height="678" key="search.everywhere.popup" timestamp="1608052357560">
+    <state x="943" y="325" width="672" height="678" key="search.everywhere.popup" timestamp="1610204680272">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="943" y="325" width="672" height="678" key="search.everywhere.popup/0.0.2560.1440@0.0.2560.1440" timestamp="1608052357560" />
+    <state x="943" y="325" width="672" height="678" key="search.everywhere.popup/0.0.2560.1440@0.0.2560.1440" timestamp="1610204680272" />
   </component>
 </project>

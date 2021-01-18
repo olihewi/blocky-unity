@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Chunk Rendering.unity
+    guid: 97e3adf5c19f8444ebe2249c2cc8626c
   m_configObjects: {}

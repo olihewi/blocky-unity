@@ -15,9 +15,8 @@ public class Chunk : MonoBehaviour
   public GameObject transparentChild;
   public bool isGenerated = false;
   
-  
   public ChunkPos thisChunkPos;
-  public Chunk[] adjacentChunks = new Chunk[6];
+  public Chunk[] adjacentChunks = new Chunk[6]; // Used for mesh generation
   
   public void GenerateMesh()
   {
@@ -39,10 +38,10 @@ public class Chunk : MonoBehaviour
       {
         for (int y = 0; y < chunkHeight; y++)
         {
-          if (blocks[x, y, z].isAir) continue;
+          if (blocks[x, y, z].isAir) continue; // Skip this block if it is air (faster than performing a null check)
 
-          int faceCounter = 0;
-          ref List<Vector3> thisVerts = ref verts;
+          int faceCounter = 0; // Face counter is used to calculate the number of triangles to generate
+          ref List<Vector3> thisVerts = ref verts; // The lists are passed by reference to reduce checks
           ref List<int> thisTris = ref tris;
           ref List<Vector2> thisUvs = ref uvs;
           if (blocks[x, y, z].isTransparent)
@@ -54,7 +53,7 @@ public class Chunk : MonoBehaviour
           Vector3 thisPos = new Vector3(x, y, z);
           // Top
           bool hasFace = false;
-          if (y == chunkHeight - 1)
+          if (y == chunkHeight - 1) // Checking adjacent chunks when at the border between chunks.
           {
             if (adjacentChunks[0] != null && adjacentChunks[0].blocks[x, 0, z].isTransparent)
               hasFace = true;
@@ -62,7 +61,7 @@ public class Chunk : MonoBehaviour
           else if (blocks[x, y + 1, z].isTransparent)
             hasFace = true;
 
-          if (hasFace)
+          if (hasFace) // Adding vertices at relative positions for the face direction
           {
             thisVerts.Add(thisPos + new Vector3(0, 1, 0));
             thisVerts.Add(thisPos + new Vector3(0, 1, 1));
@@ -178,10 +177,10 @@ public class Chunk : MonoBehaviour
           {
             thisTris.Add(vertCountOffset + i * 4);
             thisTris.Add(vertCountOffset + i * 4 + 1);
-            thisTris.Add(vertCountOffset + i * 4 + 2); // tri 1
+            thisTris.Add(vertCountOffset + i * 4 + 2); // Tri 1
             thisTris.Add(vertCountOffset + i * 4);
             thisTris.Add(vertCountOffset + i * 4 + 2);
-            thisTris.Add(vertCountOffset + i * 4 + 3); // tri 2
+            thisTris.Add(vertCountOffset + i * 4 + 3); // Tri 2
           }
           
         }

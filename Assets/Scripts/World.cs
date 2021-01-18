@@ -24,7 +24,7 @@ public class World : MonoBehaviour
   public Dictionary<ChunkPos, Chunk> chunks = new Dictionary<ChunkPos, Chunk>();
   
   private List<ChunkPos> chunksToGenerate = new List<ChunkPos>();
-
+  private List<float> totalChunkGenTime = new List<float>();
   private void Start()
   {
     var position = player.position;
@@ -39,7 +39,7 @@ public class World : MonoBehaviour
       int index = 1;
       foreach (FastNoiseLite noiseLayer in biome.heightMapNoiseLayers)
       {
-        noiseLayer.mSeed = (int) (seed * index * 0.75f);
+        noiseLayer.mSeed = (int) (seed * index * 0.75f); // Automatic seeding of coherent noise
         index++;
       }
     }
@@ -60,27 +60,41 @@ public class World : MonoBehaviour
   private Biome currentPlayerBiome;
   private void Update()
   {
-    var position = player.position;
+    Vector3 position = player.position;
     Biome playerBiome = GetBiome(Mathf.FloorToInt(position.x), Mathf.FloorToInt(position.z));
-    if (playerBiome != currentPlayerBiome)
+    if (playerBiome != currentPlayerBiome) // Adjusting skybox and fog to fit the biome
     {
       currentPlayerBiome = playerBiome;
       RenderSettings.fogColor = playerBiome.fogColor;
       RenderSettings.skybox = playerBiome.skyboxMaterial;
     }
     ChunkPos playerChunkPos = new ChunkPos(Mathf.FloorToInt(position.x)/Chunk.chunkWidth,Mathf.FloorToInt(position.y)/Chunk.chunkHeight,Mathf.FloorToInt(position.z)/Chunk.chunkDepth);
-    if (playerChunkPos.x != currentChunk.x || playerChunkPos.y != currentChunk.y || playerChunkPos.z != currentChunk.z)
+    if (playerChunkPos.x != currentChunk.x || playerChunkPos.y != currentChunk.y || playerChunkPos.z != currentChunk.z) // Updating chunks when position changes
     {
       currentChunk = playerChunkPos;
+      
       UpdateChunks(playerChunkPos);
     }
 
+    if (Input.GetKeyDown(KeyCode.X)) // Performance output on X key
+    {
+      float sum = 0;
+      foreach (float i in totalChunkGenTime)
+      {
+        sum += i;
+      }
+      Debug.Log("Avg per chunk: " + (sum/totalChunkGenTime.Count) + ", Sample size: " + totalChunkGenTime.Count);
+    }
+
     // Generate Chunks to Generate
-    for (int i = 0; i < 2; i++)
+    for (int i = 0; i < 2; i++) // Generating new chunks
     {
       if (chunksToGenerate.Count == 0) break;
       ChunkPos chunkToGen = chunksToGenerate[0];
+      float thisChunkTimer = Time.realtimeSinceStartup;
       Chunk thisChunk = GenerateChunk(chunkToGen.x, chunkToGen.y, chunkToGen.z);
+      thisChunkTimer = Time.realtimeSinceStartup - thisChunkTimer;
+      totalChunkGenTime.Add(thisChunkTimer);
       chunksToGenerate.Remove(chunkToGen);
     }
     
@@ -105,13 +119,13 @@ public class World : MonoBehaviour
         }
       }
     }
-    chunksToGenerate.Sort(delegate(ChunkPos a, ChunkPos b)
+    chunksToGenerate.Sort(delegate(ChunkPos a, ChunkPos b) // Chunks are sorted by closeness to the player
     {
       int magnitudeA = Mathf.FloorToInt((new Vector3(a.x,a.y,a.z) - new Vector3(playerChunkPos.x,playerChunkPos.y,playerChunkPos.z)).magnitude);
       int magnitudeB = Mathf.FloorToInt((new Vector3(b.x,b.y,b.z) - new Vector3(playerChunkPos.x,playerChunkPos.y,playerChunkPos.z)).magnitude);
       return magnitudeA - magnitudeB;
     });
-    List<ChunkPos> chunksToDelete = new List<ChunkPos>();
+    List<ChunkPos> chunksToDelete = new List<ChunkPos>(); // Deleting old chunks
     foreach (KeyValuePair<ChunkPos, Chunk> chunk in chunks)
     {
       ChunkPos cp = chunk.Key;
@@ -130,7 +144,7 @@ public class World : MonoBehaviour
   private Chunk GenerateChunk(int chunkX, int chunkY, int chunkZ)
   {
     ChunkPos thisChunkPos = new ChunkPos(chunkX, chunkY, chunkZ);
-    if (!chunks.TryGetValue(thisChunkPos, out Chunk thisChunkObject))
+    if (!chunks.TryGetValue(thisChunkPos, out Chunk thisChunkObject)) // If the chunk doesn't already exist, construct a new one.
     {
       GameObject thisChunk = GameObject.Instantiate(chunkPrefab, new Vector3(chunkX * Chunk.chunkWidth, chunkY * Chunk.chunkHeight, chunkZ * Chunk.chunkDepth), Quaternion.identity);
             thisChunk.transform.parent = transform;
@@ -142,7 +156,7 @@ public class World : MonoBehaviour
 
     thisChunkObject.thisChunkPos = new ChunkPos(chunkX, chunkY, chunkZ);
     
-    Biome[][] chunkBiomes = new Biome[Chunk.chunkWidth + 2 * biomeBlendAmount][];
+    Biome[][] chunkBiomes = new Biome[Chunk.chunkWidth + 2 * biomeBlendAmount][]; // List of biomes in each coordinate to allow blending
     for (int index = 0; index < Chunk.chunkWidth + 2 * biomeBlendAmount; index++)
     {
       chunkBiomes[index] = new Biome[Chunk.chunkHeight + 2 * biomeBlendAmount];
@@ -163,7 +177,7 @@ public class World : MonoBehaviour
         float perlin = 0f;
         Biome thisBiome = chunkBiomes[x + biomeBlendAmount][z + biomeBlendAmount];
         Dictionary<Biome,int> biomeBlend = new Dictionary<Biome, int>();
-        int numOfBiomes = 0;
+        int numOfBiomes = 0; // Number of biomes to blend for each x,z coordinate
         for (int blendX = x; blendX <= x + biomeBlendAmount * 2; blendX++)
         {
           for (int blendZ = z; blendZ <= z + biomeBlendAmount * 2; blendZ++)
@@ -192,7 +206,7 @@ public class World : MonoBehaviour
           perlin += thisBlendPerlin * blend.Value;
         }
 
-        perlin /= numOfBiomes;
+        perlin /= numOfBiomes; // Average across biomes
 
         for (int y = 0; y < Chunk.chunkHeight; y++)
         {
