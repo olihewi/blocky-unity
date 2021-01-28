@@ -21,3 +21,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4b703711504a5ee40b87beb707059940, type: 2}
   - {fileID: 11400000, guid: 4b703711504a5ee40b87beb707059940, type: 2}
   isTransparent: 0
+  audioMaterial: {fileID: 11400000, guid: 885fb875b8aa44e4e94cf181add817e4, type: 2}

@@ -7,10 +7,11 @@ using UnityEngine;
 public class Chunk : MonoBehaviour
 {
   
-  public static int chunkWidth = 16;
-  public static int chunkHeight = 16;
-  public static int chunkDepth = 16;
-  public Block[,,] blocks = new Block[chunkWidth, chunkHeight, chunkDepth];
+  public const int CHUNK_WIDTH = 16;
+  public const int CHUNK_HEIGHT = 16;
+  public const int CHUNK_DEPTH = 16;
+  
+  public Block[,,] blocks = new Block[CHUNK_WIDTH, CHUNK_HEIGHT, CHUNK_DEPTH];
 
   public GameObject transparentChild;
   public bool isGenerated = false;
@@ -32,11 +33,11 @@ public class Chunk : MonoBehaviour
     List<int> tris_t = new List<int>();
     List<Vector2> uvs_t = new List<Vector2>();
 
-    for (int x = 0; x < chunkWidth; x++)
+    for (int x = 0; x < CHUNK_WIDTH; x++)
     {
-      for (int z = 0; z < chunkDepth; z++)
+      for (int z = 0; z < CHUNK_DEPTH; z++)
       {
-        for (int y = 0; y < chunkHeight; y++)
+        for (int y = 0; y < CHUNK_HEIGHT; y++)
         {
           if (blocks[x, y, z].isAir) continue; // Skip this block if it is air (faster than performing a null check)
 
@@ -53,7 +54,7 @@ public class Chunk : MonoBehaviour
           Vector3 thisPos = new Vector3(x, y, z);
           // Top
           bool hasFace = false;
-          if (y == chunkHeight - 1) // Checking adjacent chunks when at the border between chunks.
+          if (y == CHUNK_HEIGHT - 1) // Checking adjacent chunks when at the border between chunks.
           {
             if (adjacentChunks[0] != null && adjacentChunks[0].blocks[x, 0, z].isTransparent)
               hasFace = true;
@@ -75,7 +76,7 @@ public class Chunk : MonoBehaviour
           hasFace = false;
           if (y == 0)
           {
-            if (adjacentChunks[1] != null && adjacentChunks[1].blocks[x, chunkHeight - 1, z].isTransparent)
+            if (adjacentChunks[1] != null && adjacentChunks[1].blocks[x, CHUNK_HEIGHT - 1, z].isTransparent)
               hasFace = true;
           }
           else if (blocks[x, y - 1, z].isTransparent)
@@ -95,7 +96,7 @@ public class Chunk : MonoBehaviour
           hasFace = false;
           if (z == 0)
           {
-            if (adjacentChunks[2] != null && adjacentChunks[2].blocks[x, y, chunkDepth - 1].isTransparent)
+            if (adjacentChunks[2] != null && adjacentChunks[2].blocks[x, y, CHUNK_DEPTH - 1].isTransparent)
               hasFace = true;
           }
           else if (blocks[x, y, z - 1].isTransparent)
@@ -113,7 +114,7 @@ public class Chunk : MonoBehaviour
 
           // Back
           hasFace = false;
-          if (z == chunkDepth - 1)
+          if (z == CHUNK_DEPTH - 1)
           {
             if (adjacentChunks[4] != null && adjacentChunks[4].blocks[x, y, 0].isTransparent)
               hasFace = true;
@@ -135,7 +136,7 @@ public class Chunk : MonoBehaviour
           hasFace = false;
           if (x == 0)
           {
-            if (adjacentChunks[3] != null && adjacentChunks[3].blocks[chunkWidth - 1, y, z].isTransparent)
+            if (adjacentChunks[3] != null && adjacentChunks[3].blocks[CHUNK_WIDTH - 1, y, z].isTransparent)
               hasFace = true;
           }
           else if (blocks[x - 1, y, z].isTransparent)
@@ -153,7 +154,7 @@ public class Chunk : MonoBehaviour
 
           // Right
           hasFace = false;
-          if (x == chunkWidth - 1)
+          if (x == CHUNK_WIDTH - 1)
           {
             if (adjacentChunks[5] != null && adjacentChunks[5].blocks[0, y, z].isTransparent)
               hasFace = true;
@@ -209,11 +210,11 @@ public class Chunk : MonoBehaviour
 
   public void FillWithAir(Block air)
   {
-    for (int x = 0; x < chunkWidth; x++)
+    for (int x = 0; x < CHUNK_WIDTH; x++)
     {
-      for (int y = 0; y < chunkHeight; y++)
+      for (int y = 0; y < CHUNK_HEIGHT; y++)
       {
-        for (int z = 0; z < chunkDepth; z++)
+        for (int z = 0; z < CHUNK_DEPTH; z++)
         {
           blocks[x, y, z] = air;
         }

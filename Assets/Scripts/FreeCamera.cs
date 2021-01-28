@@ -9,7 +9,7 @@ public class FreeCamera : MonoBehaviour
   public float fastFlySpeed = 30;
   public float cameraSensitivity = 1;
   private Vector2 currentRotation;
-  private bool isCameraRotating = true;
+  public bool isCameraRotating = true;
 
   private void Start()
   {

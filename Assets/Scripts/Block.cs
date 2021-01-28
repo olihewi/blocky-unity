@@ -8,4 +8,5 @@ public class Block : ScriptableObject // ScriptableObjects are data stored in th
   public bool isAir = false;
   public BlockTile[] textures = new BlockTile[6]; // 0 = top, 1 = bottom, 2 = front, 3 = left, 4 = back, 5 = right
   public bool isTransparent = false; // determines mesh type and if faces adjacent to this block should be rendered
+  public BlockMaterial audioMaterial;
 }

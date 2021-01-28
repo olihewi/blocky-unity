@@ -24,11 +24,11 @@ public class World : MonoBehaviour
   public Dictionary<ChunkPos, Chunk> chunks = new Dictionary<ChunkPos, Chunk>();
   
   private List<ChunkPos> chunksToGenerate = new List<ChunkPos>();
-  private List<float> totalChunkGenTime = new List<float>();
+  private float averageChunkGenTime;
   private void Start()
   {
     var position = player.position;
-    currentChunk = new ChunkPos(Mathf.FloorToInt(position.x)/Chunk.chunkWidth-1,Mathf.FloorToInt(position.y)/Chunk.chunkHeight-1,Mathf.FloorToInt(position.z)/Chunk.chunkDepth-1);
+    currentChunk = new ChunkPos(Mathf.FloorToInt(position.x)/Chunk.CHUNK_WIDTH-1,Mathf.FloorToInt(position.y)/Chunk.CHUNK_HEIGHT-1,Mathf.FloorToInt(position.z)/Chunk.CHUNK_DEPTH-1);
     foreach (KeyValuePair<ChunkPos, Chunk> chunk in chunks)
     {
       Destroy(chunk.Value.gameObject);
@@ -68,22 +68,12 @@ public class World : MonoBehaviour
       RenderSettings.fogColor = playerBiome.fogColor;
       RenderSettings.skybox = playerBiome.skyboxMaterial;
     }
-    ChunkPos playerChunkPos = new ChunkPos(Mathf.FloorToInt(position.x)/Chunk.chunkWidth,Mathf.FloorToInt(position.y)/Chunk.chunkHeight,Mathf.FloorToInt(position.z)/Chunk.chunkDepth);
+    ChunkPos playerChunkPos = new ChunkPos(Mathf.FloorToInt(position.x)/Chunk.CHUNK_WIDTH,Mathf.FloorToInt(position.y)/Chunk.CHUNK_HEIGHT,Mathf.FloorToInt(position.z)/Chunk.CHUNK_DEPTH);
     if (playerChunkPos.x != currentChunk.x || playerChunkPos.y != currentChunk.y || playerChunkPos.z != currentChunk.z) // Updating chunks when position changes
     {
       currentChunk = playerChunkPos;
       
       UpdateChunks(playerChunkPos);
-    }
-
-    if (Input.GetKeyDown(KeyCode.X)) // Performance output on X key
-    {
-      float sum = 0;
-      foreach (float i in totalChunkGenTime)
-      {
-        sum += i;
-      }
-      Debug.Log("Avg per chunk: " + (sum/totalChunkGenTime.Count) + ", Sample size: " + totalChunkGenTime.Count);
     }
 
     // Generate Chunks to Generate
@@ -94,7 +84,8 @@ public class World : MonoBehaviour
       float thisChunkTimer = Time.realtimeSinceStartup;
       Chunk thisChunk = GenerateChunk(chunkToGen.x, chunkToGen.y, chunkToGen.z);
       thisChunkTimer = Time.realtimeSinceStartup - thisChunkTimer;
-      totalChunkGenTime.Add(thisChunkTimer);
+      averageChunkGenTime += thisChunkTimer;
+      averageChunkGenTime /= 2;
       chunksToGenerate.Remove(chunkToGen);
     }
     
@@ -146,7 +137,7 @@ public class World : MonoBehaviour
     ChunkPos thisChunkPos = new ChunkPos(chunkX, chunkY, chunkZ);
     if (!chunks.TryGetValue(thisChunkPos, out Chunk thisChunkObject)) // If the chunk doesn't already exist, construct a new one.
     {
-      GameObject thisChunk = GameObject.Instantiate(chunkPrefab, new Vector3(chunkX * Chunk.chunkWidth, chunkY * Chunk.chunkHeight, chunkZ * Chunk.chunkDepth), Quaternion.identity);
+      GameObject thisChunk = GameObject.Instantiate(chunkPrefab, new Vector3(chunkX * Chunk.CHUNK_WIDTH, chunkY * Chunk.CHUNK_HEIGHT, chunkZ * Chunk.CHUNK_DEPTH), Quaternion.identity);
             thisChunk.transform.parent = transform;
             thisChunk.name = "Chunk [" + chunkX + ", " + chunkY + ", " + chunkZ + "]";
             thisChunkObject = thisChunk.GetComponent<Chunk>();
@@ -156,23 +147,23 @@ public class World : MonoBehaviour
 
     thisChunkObject.thisChunkPos = new ChunkPos(chunkX, chunkY, chunkZ);
     
-    Biome[][] chunkBiomes = new Biome[Chunk.chunkWidth + 2 * biomeBlendAmount][]; // List of biomes in each coordinate to allow blending
-    for (int index = 0; index < Chunk.chunkWidth + 2 * biomeBlendAmount; index++)
+    Biome[][] chunkBiomes = new Biome[Chunk.CHUNK_WIDTH + 2 * biomeBlendAmount][]; // List of biomes in each coordinate to allow blending
+    for (int index = 0; index < Chunk.CHUNK_WIDTH + 2 * biomeBlendAmount; index++)
     {
-      chunkBiomes[index] = new Biome[Chunk.chunkHeight + 2 * biomeBlendAmount];
+      chunkBiomes[index] = new Biome[Chunk.CHUNK_HEIGHT + 2 * biomeBlendAmount];
     }
 
-    for (int x = -biomeBlendAmount; x < Chunk.chunkWidth + biomeBlendAmount; x++)
+    for (int x = -biomeBlendAmount; x < Chunk.CHUNK_WIDTH + biomeBlendAmount; x++)
     {
-      for (int z = -biomeBlendAmount; z < Chunk.chunkWidth + biomeBlendAmount; z++)
+      for (int z = -biomeBlendAmount; z < Chunk.CHUNK_WIDTH + biomeBlendAmount; z++)
       {
-        chunkBiomes[x + biomeBlendAmount][z + biomeBlendAmount] = GetBiome(chunkX * Chunk.chunkWidth + x, chunkZ * Chunk.chunkDepth + z);
+        chunkBiomes[x + biomeBlendAmount][z + biomeBlendAmount] = GetBiome(chunkX * Chunk.CHUNK_WIDTH + x, chunkZ * Chunk.CHUNK_DEPTH + z);
       }
     }
 
-    for (int x = 0; x < Chunk.chunkWidth; x++)
+    for (int x = 0; x < Chunk.CHUNK_WIDTH; x++)
     {
-      for (int z = 0; z < Chunk.chunkDepth; z++)
+      for (int z = 0; z < Chunk.CHUNK_DEPTH; z++)
       {
         float perlin = 0f;
         Biome thisBiome = chunkBiomes[x + biomeBlendAmount][z + biomeBlendAmount];
@@ -199,7 +190,7 @@ public class World : MonoBehaviour
           float thisBlendPerlin = 0;
           foreach (FastNoiseLite noiseLayer in blend.Key.heightMapNoiseLayers)
           {
-            thisBlendPerlin += noiseLayer.GetNoise(chunkX * Chunk.chunkWidth + x, chunkZ * Chunk.chunkDepth + z) * noiseLayer.mAmplitude;
+            thisBlendPerlin += noiseLayer.GetNoise(chunkX * Chunk.CHUNK_WIDTH + x, chunkZ * Chunk.CHUNK_DEPTH + z) * noiseLayer.mAmplitude;
           }
 
           thisBlendPerlin += blend.Key.surfaceHeight;
@@ -208,16 +199,16 @@ public class World : MonoBehaviour
 
         perlin /= numOfBiomes; // Average across biomes
 
-        for (int y = 0; y < Chunk.chunkHeight; y++)
+        for (int y = 0; y < Chunk.CHUNK_HEIGHT; y++)
         {
-          if (chunkY * Chunk.chunkHeight + y < perlin + seaLevel)
+          if (chunkY * Chunk.CHUNK_HEIGHT + y < perlin + seaLevel)
           {
             thisChunkObject.blocks[x, y, z] = thisBiome.fillerBlock;
-            if (chunkY * Chunk.chunkHeight + y < seaLevel)
+            if (chunkY * Chunk.CHUNK_HEIGHT + y < seaLevel)
             {
               foreach (FastNoiseLite noiseLayer in caveNoiseLayers)
               {
-                float cavePerlin = noiseLayer.GetNoise(chunkX * Chunk.chunkWidth + x, (chunkY * Chunk.chunkHeight + y) * 2, chunkZ * Chunk.chunkDepth + z);
+                float cavePerlin = noiseLayer.GetNoise(chunkX * Chunk.CHUNK_WIDTH + x, (chunkY * Chunk.CHUNK_HEIGHT + y) * 2, chunkZ * Chunk.CHUNK_DEPTH + z);
                 if (cavePerlin >= noiseLayer.threshold.x && cavePerlin <= noiseLayer.threshold.y)
                 {
                   thisChunkObject.blocks[x, y, z] = airBlock;
@@ -229,14 +220,14 @@ public class World : MonoBehaviour
             
             foreach (BlockLayer layer in thisBiome.blockLayers)
             {
-              if (chunkY * Chunk.chunkHeight + y + layer.height >= perlin + seaLevel)
+              if (chunkY * Chunk.CHUNK_HEIGHT + y + layer.height >= perlin + seaLevel)
               {
                 thisChunkObject.blocks[x, y, z] = layer.block;
               }
             }
-            if (chunkY * Chunk.chunkHeight + y + 1 >= perlin + seaLevel)
+            if (chunkY * Chunk.CHUNK_HEIGHT + y + 1 >= perlin + seaLevel)
             {
-              GenerateTreeInChunk(chunkX*Chunk.chunkWidth+x,chunkY*Chunk.chunkHeight+y,chunkZ*Chunk.chunkDepth+z, thisBiome);
+              GenerateTreeInChunk(chunkX*Chunk.CHUNK_WIDTH+x,chunkY*Chunk.CHUNK_HEIGHT+y,chunkZ*Chunk.CHUNK_DEPTH+z, thisBiome);
             }
             
           }
@@ -291,17 +282,17 @@ public class World : MonoBehaviour
 
   private void SetBlock(int worldX, int worldY, int worldZ, Block block)
   {
-    ChunkPos thisChunkPos = new ChunkPos(Mathf.FloorToInt(worldX / (float)Chunk.chunkWidth), Mathf.FloorToInt(worldY / (float)Chunk.chunkHeight), Mathf.FloorToInt(worldZ / (float)Chunk.chunkDepth));
+    ChunkPos thisChunkPos = new ChunkPos(Mathf.FloorToInt(worldX / (float)Chunk.CHUNK_WIDTH), Mathf.FloorToInt(worldY / (float)Chunk.CHUNK_HEIGHT), Mathf.FloorToInt(worldZ / (float)Chunk.CHUNK_DEPTH));
     if (!chunks.TryGetValue(thisChunkPos, out Chunk thisChunk))
     {
-      GameObject thisChunkObject = Instantiate(chunkPrefab, new Vector3(thisChunkPos.x * Chunk.chunkWidth, thisChunkPos.y * Chunk.chunkHeight, thisChunkPos.z * Chunk.chunkDepth), Quaternion.identity);
+      GameObject thisChunkObject = Instantiate(chunkPrefab, new Vector3(thisChunkPos.x * Chunk.CHUNK_WIDTH, thisChunkPos.y * Chunk.CHUNK_HEIGHT, thisChunkPos.z * Chunk.CHUNK_DEPTH), Quaternion.identity);
       thisChunkObject.transform.parent = transform;
       thisChunkObject.name = "Chunk [" + thisChunkPos.x + ", " + thisChunkPos.y + ", " + thisChunkPos.z + "]";
       thisChunk = thisChunkObject.GetComponent<Chunk>();
       thisChunk.FillWithAir(airBlock);
       chunks.Add(thisChunkPos,thisChunk);
     }
-    thisChunk.blocks[MathMod(worldX,Chunk.chunkWidth), MathMod(worldY,Chunk.chunkHeight), MathMod(worldZ,Chunk.chunkDepth)] = block;
+    thisChunk.blocks[MathMod(worldX,Chunk.CHUNK_WIDTH), MathMod(worldY,Chunk.CHUNK_HEIGHT), MathMod(worldZ,Chunk.CHUNK_DEPTH)] = block;
   }
 
   private void GenerateTreeInChunk(int worldX, int worldY, int worldZ, Biome biome)

@@ -33,6 +33,7 @@
         <e p="Scripts" t="Include">
           <e p="Biome.cs" t="Include" />
           <e p="Block.cs" t="Include" />
+          <e p="BlockMaterial.cs" t="Include" />
           <e p="BlockTile.cs" t="Include" />
           <e p="Builder.cs" t="Include" />
           <e p="Chunk.cs" t="Include" />
@@ -48,6 +49,9 @@
             <e p="FastNoiseLite.cs" t="Include" />
           </e>
           <e p="TreeType.cs" t="Include" />
+          <e p="UI" t="Include">
+            <e p="ContainerItem.cs" t="Include" />
+          </e>
           <e p="World.cs" t="Include" />
         </e>
       </e>

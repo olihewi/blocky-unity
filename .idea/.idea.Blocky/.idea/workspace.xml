@@ -20,16 +20,100 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25ed5fa4-01c2-4521-a89d-283679d9330f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Blocky/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blocky/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blocky/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blocky/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blocky/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blocky/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Biome.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Biome.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/Block Break/Stone 1.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/Block Break/Stone 1.ogg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Acacia Leaves.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Acacia Leaves.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Acacia Log.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Acacia Log.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Acacia Planks.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Acacia Planks.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Air.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Air.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Andesite.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Andesite.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Bedrock.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Bedrock.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Birch Leaves.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Birch Leaves.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Birch Log.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Birch Log.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Birch Planks.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Birch Planks.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Blue Ice.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Blue Ice.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Bookshelf.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Bookshelf.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Bricks.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Bricks.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Cactus.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Cactus.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Carved Pumpkin.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Carved Pumpkin.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Carved Sandstone.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Carved Sandstone.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Carved Stone Bricks.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Carved Stone Bricks.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Clay.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Clay.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Coarse Dirt.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Coarse Dirt.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Cobblestone.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Cobblestone.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Cracked Stone Bricks.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Cracked Stone Bricks.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Crying Obsidian.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Crying Obsidian.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Cut Red Sandstone.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Cut Red Sandstone.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Cut Sandstone.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Cut Sandstone.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Dark Oak Leaves.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Dark Oak Leaves.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Dark Oak Log.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Dark Oak Log.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Dark Oak Planks.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Dark Oak Planks.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Dark Prismarine.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Dark Prismarine.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Diorite.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Diorite.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Dirt.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Dirt.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Dry Farmland.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Dry Farmland.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Glass.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Glass.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Glowstone.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Glowstone.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Granite.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Granite.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Grass.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Grass.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Gravel.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Gravel.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Ice.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Ice.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Jungle Leaves.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Jungle Leaves.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Jungle Log.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Jungle Log.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Jungle Planks.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Jungle Planks.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Mossy Cobblestone.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Mossy Cobblestone.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Mossy Stone Bricks.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Mossy Stone Bricks.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Mycelium.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Mycelium.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Netherrack.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Netherrack.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Oak Leaves.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Oak Leaves.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Oak Log.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Oak Log.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Oak Planks.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Oak Planks.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Obsidian.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Obsidian.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Packed Ice.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Packed Ice.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Path.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Path.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Podzol.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Podzol.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Polished Andesite.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Polished Andesite.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Polished Diorite.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Polished Diorite.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Polished Granite.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Polished Granite.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Prismarine Bricks.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Prismarine Bricks.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Prismarine.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Prismarine.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Pumpkin.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Pumpkin.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Red Carved Sandstone.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Red Carved Sandstone.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Red Sand.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Red Sand.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Red Sandstone.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Red Sandstone.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Sand.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Sand.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Sandstone.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Sandstone.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Sea Lantern.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Sea Lantern.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Smooth Stone.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Smooth Stone.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Snow.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Snow.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Snowed Dirt.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Snowed Dirt.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Snowed Stone.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Snowed Stone.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Spruce Leaves.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Spruce Leaves.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Spruce Log.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Spruce Log.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Spruce Planks.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Spruce Planks.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Stone Bricks.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Stone Bricks.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Stone.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Stone.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Stripped Acacia Log.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Stripped Acacia Log.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Stripped Birch.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Stripped Birch.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Stripped Dark Oak Log.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Stripped Dark Oak Log.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Stripped Jungle Log.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Stripped Jungle Log.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Stripped Oak Log.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Stripped Oak Log.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Stripped Spruce Log.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Stripped Spruce Log.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Terracotta.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Terracotta.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Blocks/Wet Farmland.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Blocks/Wet Farmland.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Prefabs/Block Breaking Particles.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Prefabs/Block Breaking Particles.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Chunk Rendering.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Chunk Rendering.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Block.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Block.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BlockTile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BlockTile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Builder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Builder.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FreeCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FreeCamera.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inventory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/World.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +125,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DestroyParticlesOnFinish.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BlockMaterial.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Builder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TreeType.cs" root0="FORCE_HIGHLIGHTING" />
@@ -56,19 +141,22 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Editor/BlockTileEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Third Party/FastNoiseLite.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ChunkGenerationJob.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/FreeCamera.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DestroyParticlesOnFinish.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TreeType.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Editor/WorldGenEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Editor/BiomeEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Biome.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Block.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BlockTile.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Builder.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Chunk.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Container Item.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FreeCamera.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/ContainerItem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Inventory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Block.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BlockMaterial.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Builder.cs" />
       </list>
     </option>
   </component>
@@ -83,7 +171,7 @@
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
@@ -134,7 +222,9 @@
       <workItem from="1608069276099" duration="13828000" />
       <workItem from="1608388900241" duration="1377000" />
       <workItem from="1610204374775" duration="1470000" />
-      <workItem from="1610964930918" duration="7359000" />
+      <workItem from="1610964930918" duration="7954000" />
+      <workItem from="1611780783582" duration="12008000" />
+      <workItem from="1611853224250" duration="3323000" />
     </task>
     <servers />
   </component>
@@ -227,9 +317,10 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="872" y="452" key="Rider.ProjectTemplateDialog.Size/0.0.2560.1440@0.0.2560.1440" timestamp="1606665830223" />
-    <state x="1143" y="403" key="SettingsEditor" timestamp="1607966468622">
+    <state x="1143" y="403" key="SettingsEditor" timestamp="1611784083637">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
+    <state x="1143" y="403" key="SettingsEditor/-1920.101.1920.1200/0.0.2560.1440@0.0.2560.1440" timestamp="1611784083637" />
     <state x="1143" y="403" key="SettingsEditor/0.0.2560.1440@0.0.2560.1440" timestamp="1607966468622" />
     <state x="92" y="92" width="2376" height="1256" key="VCS.FileHistoryDialog" timestamp="1603398355129">
       <screen x="0" y="0" width="2560" height="1440" />
